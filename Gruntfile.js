@@ -134,6 +134,6 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', ['build', 'shell:deploy']);
   grunt.registerTask('dev', ['jshint', 'includes', 'compass:dev', 'shell:copyImages']);
   grunt.registerTask('watch', ['dev', 'watch']);
-  grunt.registerTask('default', ['dev']);
+  grunt.registerTask('default', ['shell:clear', 'dev']);
 
 };
