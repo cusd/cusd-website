@@ -2,6 +2,9 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    remoteUser: 'deployer',
+    remoteHost: '162.243.45.15',
+    remoteDir: '/home/deployer/www/current',
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today() %> */\n'
@@ -133,7 +136,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['shell:clear', 'jshint', 'includes', 'shell:copyImages', 'shell:copyFonts', 'uglify', 'compass:dist', 'hashres']);
   grunt.registerTask('deploy', ['build', 'shell:deploy']);
   grunt.registerTask('dev', ['jshint', 'includes', 'compass:dev', 'shell:copyImages']);
-  grunt.registerTask('watch', ['dev', 'watch']);
+  grunt.registerTask('server', ['dev', 'watch']);
   grunt.registerTask('default', ['shell:clear', 'dev']);
 
 };
