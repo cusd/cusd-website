@@ -2,6 +2,60 @@
 @import "settings";
 @import "lib/foundation";
 
+body {
+  overflow-x: hidden;
+}
 
+footer {
+  @include grid-row();
+  margin-top: rem-calc(30px);
+  margin-bottom: rem-calc(10px);
+  font-size: 0.55rem;
+
+  div {
+    @include grid-column($columns:12,$center:true);
+    text-align: center;
+    @media #{$small-only} {
+      padding-left: 0;
+      padding-right: 0;
+    }  
+  }
+
+  .banner {
+    display: inline-block;
+    padding: rem-calc(5px 20px 5px);
+    margin-bottom: rem-calc(5px);
+    background: $primary-color;
+    color: #fafafa;
+    position: relative;
+    font-size: 0.75rem;
+    line-height: 1;
+    width: 100%;
+
+    @media #{$medium-up} {
+      width: auto;
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border: rem-calc(11px) solid transparent;
+      }
+
+      &:before {
+        border-left-color: #fafafa;
+        left: 0;
+        top: 0;
+      }
+
+      &:after {
+        border-right-color: #fafafa;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+}
 
 @import "home";
