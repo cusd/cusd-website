@@ -262,12 +262,27 @@
     .map-panel {
       @include clearfix();
       padding: rem-calc(20px);
-      background: rgba(0,0,0,0.85);
-      color: #d8d8d8;
-      position: absolute;
-      top: 5%;
-      left: 0;
-      width: rem-calc(640px);
+      
+      @media #{$medium-up} {
+        background: rgba(0,0,0,0.85);
+        color: #d8d8d8;
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: rem-calc(640px);
+       
+        h3 {
+          margin-top: 0;
+          color: #d8d8d8;
+        }
+
+        p {
+          margin-bottom: 0;
+          max-width: 30rem;
+          font-family: $header-font-family;
+          font-weight: 300;
+        }
+      }
 
       @media #{$medium-only} {
         .le {
@@ -283,19 +298,11 @@
         width: rem-calc(400px);
       }
 
-      h3 {
-        margin-top: 0;
-        color: #d8d8d8;
-      }
 
-      p {
-        margin-bottom: 0;
-        max-width: 30rem;
-        font-family: $header-font-family;
-        font-weight: 300;
-      }
 
       .button {
+        float: right;
+        
         @media #{$medium-only} {
           position: absolute;
           top: 50%;
@@ -304,7 +311,6 @@
         }
 
         @media #{$large-up} {
-          float: right;
         }
       }
     }
