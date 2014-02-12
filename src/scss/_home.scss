@@ -19,12 +19,12 @@
 
 @mixin homepage_hero($class, $image) {
   &[data-slide="#{$class}"] {
-    background-image: url(/assets/images/homepage_hero/#{$image}_s.jpg);
+    background-image: url(/assets/images/home/hero/#{$image}_s.jpg);
     @media #{$medium-up} {
-      background-image: url(/assets/images/homepage_hero/#{$image}_m.jpg);
+      background-image: url(/assets/images/home/hero/#{$image}_m.jpg);
     }
     @media #{$large-up} {
-      background-image: url(/assets/images/homepage_hero/#{$image}_l.jpg);
+      background-image: url(/assets/images/home/hero/#{$image}_l.jpg);
     }
   }
 }
