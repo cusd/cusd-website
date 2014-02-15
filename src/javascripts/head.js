@@ -1,1 +1,1 @@
-// import 'lib/custom.modernizr.js'
+// import 'lib/vendor/modernizr.js'
