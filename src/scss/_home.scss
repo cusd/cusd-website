@@ -192,9 +192,9 @@
       @include grid-column($columns:6);
     }
 
-    @media #{$large-up} {
-      @include grid-column($columns:7);
-    }
+    // @media #{$large-up} {
+    //   @include grid-column($columns:7);
+    // }
   }
 
   .recent-updates {
@@ -204,7 +204,7 @@
     }
 
     @media #{$large-up} {
-      @include grid-column($columns:5);
+      @include grid-column($columns:5, $offset: 1);
     }
 
     h4 {
