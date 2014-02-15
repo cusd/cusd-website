@@ -6,6 +6,17 @@ body {
   overflow-x: hidden;
 }
 
+.button {
+  // border-radius: 5px;
+  // border: 1px solid darken($primary-color, 10%);
+  border-bottom: rem-calc(3px) solid darken($primary-color, 10%);
+
+  &:active {
+    -webkit-transform: translateY(rem-calc(2px));
+    border-bottom-width: rem-calc(1px);
+  }
+}
+
 footer {
   @include grid-row();
   margin-top: rem-calc(30px);
