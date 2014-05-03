@@ -97,7 +97,7 @@ $total-columns: 12 !default;
   $position:false) {
 
   // If positioned for default .column, include relative position
-  @if $position {
+  @if $position or $push or $pull{
     position: relative;
   }
 
