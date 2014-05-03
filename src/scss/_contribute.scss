@@ -1,0 +1,31 @@
+#contributePage {
+
+  .split {
+    @include grid-row();
+    margin-top: rem-calc(100px);
+    margin-bottom: rem-calc(100px);
+  }
+
+  .contact {
+    @include grid-column($columns:6);
+
+    input, textarea {
+      -webkit-appearance: none;
+      -webkit-box-shadow: none;
+    }
+
+    textarea {
+      max-width: 100%;
+      min-width: 100%;
+      height: rem-calc(200px);
+    }
+  }
+
+  .students {
+    @include grid-column($columns:6);
+
+    img {
+      margin-top: rem-calc(21px);
+    }
+  }
+}

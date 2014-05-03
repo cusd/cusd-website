@@ -1,3 +1,30 @@
 <%= render 'includes/header.html' %>
-Contribute
+<div id="contributePage" class="container">
+  
+  <section class="split">
+    <section class="contact">
+      <h3>Contact Us</h3>
+      <h6>Use the form below, or just <a href="mailto:cu.sustainabledesign@gmail.com">send us an email</a>.</h6>
+      <form action="#">
+        <label for="">Name</label>
+        <input type="text" name="name" placeholder="Bob Loblaw">
+        <label for="">Email</label>
+        <input type="text" name="email" placeholder="you@example.com">
+        <label for="">Message</label>
+        <textarea name="message" placeholder="I&#8217;d love to help out&hellip;"></textarea>
+        <input type="submit" value="Send Message" class="button small right">
+      </form>
+    </section>
+
+    <section class="students">
+      <h3>Current Student?</h3>
+      <h6>Check out our <a href="/modals/openings.html" data-reveal-id="openingsModal" data-reveal-ajax="true">open positions</a>.</h6>
+      <img src="assets/images/contribute/students_o.jpg" alt="">
+    </section>
+  </section>
+
+</div>
+
+<div id="openingsModal" class="reveal-modal medium" data-reveal></div>
+
 <%= render 'includes/footer.html' %>
