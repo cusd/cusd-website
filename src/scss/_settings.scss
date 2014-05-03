@@ -937,14 +937,16 @@ $include-html-button-classes: true;//$include-html-classes;
 // TOP BAR
 //
 
-// $include-html-top-bar-classes: $include-html-classes;
+$include-html-top-bar-classes: true;//$include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: #fafafa;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: rem-calc(75px);
+$topbar-scroll-height: rem-calc(40px);
+$topbar-scroll-transition: 300ms;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
@@ -954,24 +956,24 @@ $include-html-button-classes: true;//$include-html-classes;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
+$topbar-dropdown-bg: #fafafa;
+$topbar-dropdown-link-color: #333;
+$topbar-dropdown-link-bg: #fafafa;
 // $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
+$topbar-dropdown-toggle-color: #333;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
-// $topbar-link-weight: normal;
+$topbar-link-color: #333;
+$topbar-link-color-hover: #333;
+$topbar-link-color-active: #333;
+$topbar-link-weight: bold;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: darken($primary-color, 5%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-bg-hover: #f0f0f0;
+$topbar-link-bg-active: #ddd;
+$topbar-link-bg-active-hover: darken(#ddd, 5%);
+$topbar-link-font-family: $header-font-family;
 
 // $topbar-button-font-size: 0.75rem;
 
@@ -994,7 +996,7 @@ $include-html-button-classes: true;//$include-html-classes;
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
 // $topbar-breakpoint: #{upper-bound($medium-range)}; // Change to 9999px for always mobile layout
-// $topbar-media-query: "only screen and (min-width: #{upper-bound($medium-range)})";
+$topbar-media-query: "only screen and (min-width: 800px)";
 
 // Divider Styles
 // $topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);

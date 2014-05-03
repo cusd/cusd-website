@@ -32,6 +32,7 @@ module.exports = function(grunt) {
           'src/javascripts/lib/vendor/jquery.js', 
           'src/javascripts/lib/foundation/foundation.js', 
           'src/javascripts/lib/foundation/foundation.reveal.js',
+          'src/javascripts/lib/foundation/foundation.topbar.js',
           'src/javascripts/cusd.js'
           ],
         dest: 'build/assets/js/cusd.js',
@@ -145,7 +146,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-hashres');
 
-  grunt.registerTask('build', ['shell:clear', 'jshint', 'includes', 'shell:copyImages', 'shell:copyFonts', 'concat', 'uglify', 'compass:dist', 'hashres']);
+  grunt.registerTask('build', ['shell:clear', 'jshint', 'includes', 'concat', 'compass:dist', 'shell:copyImages', 'shell:copyFonts', 'uglify', 'hashres']);
   grunt.registerTask('deploy', ['build', 'shell:deploy']);
   grunt.registerTask('dev', ['shell:clear', 'jshint', 'includes', 'concat', 'compass:dev', 'shell:copyImages', 'shell:copyFonts']);
   grunt.registerTask('default', ['dev', 'watch']);
