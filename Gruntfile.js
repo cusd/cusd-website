@@ -16,26 +16,37 @@ module.exports = function(grunt) {
         }
       }
     },
+    concat: {
+      options: {
+        separator: ';',
+      },
+      head: {
+        src: [
+          'src/javascripts/lib/vendor/modernizr.js', 
+          'src/javascripts/head.js'
+          ],
+        dest: 'build/assets/js/head.js',
+      },
+      cusd: {
+        src: [
+          'src/javascripts/lib/vendor/jquery.js', 
+          'src/javascripts/lib/foundation/foundation.js', 
+          'src/javascripts/lib/foundation/foundation.reveal.js',
+          'src/javascripts/cusd.js'
+          ],
+        dest: 'build/assets/js/cusd.js',
+      },
+    },
     includes: {
       html: {
         cwd: 'src/',
-        src: [ '*.html', 'includes/*.html' ],
+        src: [ '*.html', 'includes/*.html', 'modals/*.html' ],
         dest: 'build/',
         options: {
           includeRegexp: /^<%=\s*render\s+['"]?([^'"]+)['"]?\s*%>$/,
           flatten: true
         }
-      },
-      js: {
-        options: {
-          includeRegexp: /^\/\/\s*import\s+['"]?([^'"]+)['"]?\s*$/,
-          duplicates: false,
-          debug: true
-        },
-        cwd: 'src/javascripts',
-        src: ['*.js'],
-        dest: 'build/assets/js/',
-      },
+      }
     },
     compass: {
       dist: {
@@ -78,7 +89,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['src/javascripts/*.js', 'src/javascripts/**/*.js'],
-        tasks: ['includes:js'],
+        tasks: ['concat'],
       },
     },
     shell: {
@@ -92,7 +103,7 @@ module.exports = function(grunt) {
         command: 'cp -r src/images build/assets'
       },
       copyFonts: {
-        command: 'cp -r src/images build/assets'
+        command: 'cp -r src/fonts build/assets'
       }
     },
     hashres: {
@@ -126,6 +137,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-includes');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -133,10 +145,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-hashres');
 
-  grunt.registerTask('build', ['shell:clear', 'jshint', 'includes', 'shell:copyImages', 'shell:copyFonts', 'uglify', 'compass:dist', 'hashres']);
+  grunt.registerTask('build', ['shell:clear', 'jshint', 'includes', 'shell:copyImages', 'shell:copyFonts', 'concat', 'uglify', 'compass:dist', 'hashres']);
   grunt.registerTask('deploy', ['build', 'shell:deploy']);
-  grunt.registerTask('dev', ['jshint', 'includes', 'compass:dev', 'shell:copyImages']);
-  grunt.registerTask('server', ['dev', 'watch']);
-  grunt.registerTask('default', ['shell:clear', 'dev']);
+  grunt.registerTask('dev', ['shell:clear', 'jshint', 'includes', 'concat', 'compass:dev', 'shell:copyImages', 'shell:copyFonts']);
+  grunt.registerTask('default', ['dev', 'watch']);
 
 };

@@ -313,18 +313,52 @@
 
     ul {
       @include block-grid(2);
+      @media #{$large-up} {
+        @include block-grid(4);
+      }
+    }
+
+    li {
+      -webkit-backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: rem-calc(20px);
+
       @media #{$medium-up} {
-        @include block-grid(5);
+        transition: all 300ms;
+        -webkit-transform: scale(.95);
+        -webkit-transform-style: preserve-3d;
+
+        &:hover {
+          -webkit-transform: scale(1) translateY(rem-calc(-8px));
+          box-shadow: 0 rem-calc(5px) rem-calc(10px) rgba(0,0,0,0.3);
+        }
+
+        &:active {
+          -webkit-transform: scale(.98) translateY(rem-calc(-4px));
+          box-shadow: 0 rem-calc(3px) rem-calc(7px) rgba(0,0,0,0.3);
+          transition: all 50ms;
+        }
+
+        min-height: rem-calc(240px);
       }
     }
 
     img {
       display: block;
       margin: auto;
+      min-height: 100px;
+      -webkit-transform-style: preserve-3d;
     }
 
     h6 {
       text-align: center;
+      -webkit-transform-style: preserve-3d;
     }
   }
 
@@ -336,6 +370,10 @@
   .map {
     position: relative;
 
+    > img {
+      width: 100%;
+    }
+
     .map-panel {
       @include clearfix();
       padding: rem-calc(20px);
@@ -345,7 +383,7 @@
         color: #d8d8d8;
         position: absolute;
         top: 5%;
-        left: 0;
+        right: 0;
         width: rem-calc(640px);
        
         h3 {
@@ -374,8 +412,6 @@
         height: rem-calc(250px);
         width: rem-calc(400px);
       }
-
-
 
       .button {
         float: right;

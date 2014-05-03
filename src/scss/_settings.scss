@@ -22,9 +22,9 @@
 // $rem-base: 16px;
 
 // We use this to control whether or not CSS classes come through in the gem files.
-// $include-html-classes: true;
+$include-html-classes: false;
 // $include-print-styles: true;
-// $include-html-global-classes: $include-html-classes;
+$include-html-global-classes: true;
 
 // Grid
 
@@ -38,13 +38,13 @@ $row-width: rem-calc(1024px);
 $body-bg: #fafafa;
 $body-font-color: #333;
 $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$paragraph-font-family: join("Merriweather", $body-font-family);
+$paragraph-font-family: join('glober_regularregular', $body-font-family);
 
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
-$header-font-family: join("Open Sans", $body-font-family);
-// $header-font-weight: 300;
+$header-font-family: join('globerbook', $body-font-family);
+$header-font-weight: 300;
 // $header-font-style: normal;
 $header-font-color: #333;
 // $header-line-height: 1.4;
@@ -448,7 +448,7 @@ $primary-color: #3c9b10;
 
 // Keystrokes
 
-// $include-html-type-classes: $include-html-classes;
+$include-html-type-classes: true;//$include-html-classes;
 
 // We use these to control text styles.
 // $keystroke-font: "Consolas", "Menlo", "Courier", monospace;
@@ -719,7 +719,7 @@ $primary-color: #3c9b10;
 
 // Reveal
 
-// $include-html-reveal-classes: $include-html-classes;
+$include-html-reveal-classes: true;//$include-html-classes;
 
 // We use these to control the style of the reveal overlay.
 // $reveal-overlay-bg: rgba(#000, .45);
@@ -776,7 +776,7 @@ $primary-color: #3c9b10;
 
 // Split Buttons
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: true;//$include-html-classes;
 
 // We use these to control different shared styles for Split Buttons
 // $split-button-function-factor: 10%;

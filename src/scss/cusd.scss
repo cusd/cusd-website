@@ -7,9 +7,8 @@ body {
 }
 
 .button {
-  // border-radius: 5px;
-  // border: 1px solid darken($primary-color, 10%);
   border-bottom: rem-calc(3px) solid darken($primary-color, 10%);
+  transition: background 300ms, -webkit-transform 50ms, border 50ms;
 
   &:active {
     -webkit-transform: translateY(rem-calc(2px));
@@ -19,9 +18,9 @@ body {
 
 footer {
   @include grid-row();
-  margin-top: rem-calc(30px);
-  margin-bottom: rem-calc(10px);
-  font-size: 0.55rem;
+  padding-top: rem-calc(30px);
+  padding-bottom: rem-calc(10px);
+  font-size: 0.7rem;
 
   div {
     @include grid-column($columns:12,$center:true);
@@ -35,7 +34,7 @@ footer {
   .banner {
     display: inline-block;
     padding: rem-calc(5px 20px 5px);
-    margin-bottom: rem-calc(5px);
+    margin-bottom: rem-calc(10px);
     background: $primary-color;
     color: #fafafa;
     position: relative;
