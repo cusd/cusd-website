@@ -41,7 +41,7 @@ module.exports = function(grunt) {
     includes: {
       html: {
         cwd: 'src/',
-        src: [ '*.html', 'includes/*.html', 'modals/*.html' ],
+        src: [ '*.html', 'includes/*.html', 'modals/*.html', '*.php', ],
         dest: 'build/',
         options: {
           includeRegexp: /^<%=\s*render\s+['"]?([^'"]+)['"]?\s*%>$/,
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
         livereload: true,
       },
       html: {
-        files: ['src/*.html', 'src/**/*.html'],
+        files: ['src/*.html', 'src/**/*.html', 'src/*.php'],
         tasks: ['includes:html'],
       },
       css: {
