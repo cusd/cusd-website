@@ -12,6 +12,10 @@ $off-canvas-bg-active-hover: darken(#ddd, 5%) !default;
 
 .tab-bar {
   -webkit-box-shadow: 0 2px 5px rgba(#000, 0.25);
+
+  .left-small {
+    border: none;
+  }
   
   @media only screen and (min-width: 840px) {
     display: none;
