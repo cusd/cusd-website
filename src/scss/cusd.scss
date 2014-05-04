@@ -6,6 +6,32 @@ body {
   overflow-x: hidden;
 }
 
+$off-canvas-bg-hover: #f0f0f0 !default;
+$off-canvas-bg-active: #ddd !default;
+$off-canvas-bg-active-hover: darken(#ddd, 5%) !default;
+
+.tab-bar {
+  -webkit-box-shadow: 0 2px 5px rgba(#000, 0.25);
+  
+  @media only screen and (min-width: 840px) {
+    display: none;
+  }
+}
+
+.off-canvas-list li {
+  &:hover {
+    background: $off-canvas-bg-hover;
+  }
+
+  &.active {
+    background: $off-canvas-bg-active;
+
+    &:hover {
+      background: $off-canvas-bg-active-hover;
+    }
+  }
+}
+
 $topbar-scroll-height: 40px !default;
 $topbar-scroll-transition: 300ms !default;
 

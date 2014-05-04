@@ -34,6 +34,7 @@ module.exports = function(grunt) {
           'src/javascripts/lib/foundation/foundation.reveal.js',
           'src/javascripts/lib/foundation/foundation.topbar.js',
           'src/javascripts/lib/foundation/foundation.tooltip.js',
+          'src/javascripts/lib/foundation/foundation.offcanvas.js',
           'src/javascripts/cusd.js'
           ],
         dest: 'build/assets/js/cusd.js',
