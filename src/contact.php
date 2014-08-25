@@ -2,7 +2,7 @@
 
 function send_hello($name, $email, $message) {
   $headers = 'From: ' . $name . '<' . $email . ">\r\n" . 'Reply-To:' . $email;
-  if(mail("elmorris232@gmail.com", "[CUSD Website] Message from " . $name, $message, $headers)) {
+  if(mail("cusd@cornell.edu", "[CUSD Website] Message from " . $name, $message, $headers)) {
     return Array('success'=>TRUE);
   } else {
     return Array('success'=>FALSE,'error'=>'Doh! PHP\'s mail() function failed for some reason. Try again later?');
