@@ -103,10 +103,10 @@ module.exports = function(grunt) {
         command: 'cd ./build && rsync -r --del . <%= remoteUser %>@<%= remoteHost %>:<%= remoteDir %>'
       },
       copyImages: {
-        command: 'cp -r src/images build/assets'
+        command: 'xcopy "src/images" "build/assets/images" /syi'
       },
       copyFonts: {
-        command: 'cp -r src/fonts build/assets'
+        command: 'xcopy "src/fonts" "build/assets/fonts" /syi'
       }
     },
     hashres: {
