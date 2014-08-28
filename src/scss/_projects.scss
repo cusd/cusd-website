@@ -1,0 +1,69 @@
+#projectsPage {
+
+  margin-top: rem-calc(50px);
+
+  > section {
+    @include grid-row();
+    margin-bottom: rem-calc(50px);
+  }
+
+  .header-alignment {
+    @include grid-column($columns:12);
+    margin-bottom: rem-calc(20px);
+  }
+
+  .map {
+
+    #faces ul {
+      list-style: none;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        width: 10%;
+        opacity: 0.65;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        @media #{$medium} {
+          width: 6.6666666%;
+        }
+
+        @media #{$large} {
+          width: 5%;
+        }
+      }
+    }
+  }
+
+  .projects {
+
+    article {
+      @include grid-row();
+      margin-bottom: rem-calc(50px);
+    }
+
+    aside {
+      @include grid-column($columns:12);
+
+      img {
+        margin-bottom: rem-calc(20px);
+      }
+      
+      @media #{$medium} {
+        @include grid-column($columns:4);
+      }
+    }
+
+    section {
+      @include grid-column($columns:12);
+      
+      @media #{$medium} {
+        @include grid-column($columns:8);
+      }
+    }
+  }
+
+}
