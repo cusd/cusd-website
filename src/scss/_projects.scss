@@ -58,19 +58,6 @@
         width: rem-calc(400px);
       }
 
-      .button {
-        float: right;
-        
-        @media #{$medium-only} {
-          position: absolute;
-          top: 50%;
-          right: rem-calc(20px);
-          -webkit-transform: translateY(-50%);
-        }
-
-        @media #{$large-up} {
-        }
-      }
     }
   }
 
