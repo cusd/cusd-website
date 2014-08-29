@@ -148,7 +148,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-hashres');
 
-  grunt.registerTask('build', ['shell:clear', 'jshint', 'includes', 'concat', 'compass:dist', 'shell:copyImages', 'shell:copyFonts', 'uglify', 'hashres']);
+  grunt.registerTask('build', ['shell:clear', 'jshint', 'includes', 'concat', 'compass:dist', 'shell:copyImages', 'shell:copyFonts', 'uglify']);
   grunt.registerTask('deploy', ['build', 'shell:deploy']);
   grunt.registerTask('dev', ['shell:clear', 'jshint', 'includes', 'concat', 'compass:dev', 'shell:copyImages', 'shell:copyFonts']);
   grunt.registerTask('default', ['dev', 'watch']);

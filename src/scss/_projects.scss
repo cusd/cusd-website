@@ -12,32 +12,6 @@
     margin-bottom: rem-calc(20px);
   }
 
-  .members {
-
-    #faces ul {
-      list-style: none;
-      margin: 0;
-
-      li {
-        display: inline-block;
-        width: 10%;
-        opacity: 0.65;
-
-        &:hover {
-          opacity: 1;
-        }
-
-        @media #{$medium} {
-          width: 6.6666666%;
-        }
-
-        @media #{$large} {
-          width: 5%;
-        }
-      }
-    }
-  }
-
   .projects {
 
     article {
