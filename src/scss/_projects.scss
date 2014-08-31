@@ -17,67 +17,67 @@
       margin-top: rem-calc(10px);
     }
 
-    .map {
-    position: relative;
+  .map {
+  position: relative;
 
-    > img {
-      width: 100%;
-    }
+  > img {
+    width: 100%;
+  }
 
-    .map-panel {
-      @include clearfix();
-      padding: rem-calc(20px);
-      
-      @media #{$medium-up} {
-        background: rgba(0,0,0,0.85);
+  .map-panel {
+    @include clearfix();
+    padding: rem-calc(20px);
+    
+    @media #{$medium-up} {
+      background: rgba(0,0,0,0.85);
+      color: #d8d8d8;
+      position: absolute;
+      top: 5%;
+      right: 0;
+      width: rem-calc(640px);
+     
+      h3 {
+        margin-top: 0;
         color: #d8d8d8;
-        position: absolute;
-        top: 5%;
-        right: 0;
-        width: rem-calc(640px);
-       
-        h3 {
-          margin-top: 0;
-          color: #d8d8d8;
-        }
-
-        p {
-          margin-bottom: 0;
-          max-width: 30rem;
-          font-family: $header-font-family;
-          font-weight: 300;
-        }
       }
 
+      p {
+        margin-bottom: 0;
+        max-width: 30rem;
+        font-family: $header-font-family;
+        font-weight: 300;
+      }
+    }
+
+    @media #{$medium-only} {
+      .le {
+        margin-right: rem-calc(150px);
+        float: left;
+      }
+    }
+
+    @media #{$large-up} {
+      top: 10%;
+      left: 55%;
+      height: rem-calc(250px);
+      width: rem-calc(400px);
+    }
+
+    .button {
+      float: right;
+      
       @media #{$medium-only} {
-        .le {
-          margin-right: rem-calc(150px);
-          float: left;
-        }
+        position: absolute;
+        top: 50%;
+        right: rem-calc(20px);
+        -webkit-transform: translateY(-50%);
       }
 
       @media #{$large-up} {
-        top: 10%;
-        left: 55%;
-        height: rem-calc(250px);
-        width: rem-calc(400px);
-      }
-
-      .button {
-        float: right;
-        
-        @media #{$medium-only} {
-          position: absolute;
-          top: 50%;
-          right: rem-calc(20px);
-          -webkit-transform: translateY(-50%);
-        }
-
-        @media #{$large-up} {
-        }
       }
     }
   }
+}
 
   .projects {
 
