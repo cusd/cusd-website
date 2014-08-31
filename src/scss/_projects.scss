@@ -1,10 +1,10 @@
 #projectPage {
 
-  margin-top: rem-calc(50px);
+  margin-top: rem-calc(20px);
 
   > section {
     @include grid-row();
-    margin-bottom: rem-calc(20px);
+    margin-bottom: rem-calc(50px);
   }
 
   .header-alignment {
