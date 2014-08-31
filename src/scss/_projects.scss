@@ -12,6 +12,11 @@
     margin-bottom: rem-calc(20px);
   }
 
+  .global-impact {
+      @extend %content-row;
+      margin-top: rem-calc(10px);
+    }
+
     .map {
     position: relative;
 
