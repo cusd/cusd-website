@@ -21,6 +21,9 @@
 
     @include grid-row();
     margin-bottom: rem-calc(40px);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
       
 
     aside {
@@ -33,7 +36,7 @@
     }
 
     @media #{$medium-up} {
-      margin-bottom: rem-calc(0px);
+      margin-bottom: rem-calc(65px);
       max-width: rem-calc(800px);
 
       aside {
@@ -42,9 +45,6 @@
 
       article {
         @include grid-column($columns:8);
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%)
 
       }
 
