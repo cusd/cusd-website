@@ -25,6 +25,9 @@
     aside {
       @include grid-column($columns:12);
       margin-bottom: rem-calc(10px);
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%)
     }
 
     article {
@@ -37,6 +40,9 @@
       
       aside {
         @include grid-column($columns:4);
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%)
       }
 
       article {
