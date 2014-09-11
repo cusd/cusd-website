@@ -4,12 +4,12 @@
 
   > section {
     @include grid-row();
-    margin-bottom: rem-calc(50px);
+    margin-bottom: rem-calc(70px);
   }
 
   .header-alignment {
     @include grid-column($columns:12);
-    margin-bottom: rem-calc(100px);
+    margin-bottom: rem-calc(20px);
   }
 
   .belief {
