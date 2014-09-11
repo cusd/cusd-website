@@ -1,5 +1,18 @@
 #ConnectPage {
 
+   .header {
+
+    margin: rem-calc(20px) 0 rem-calc(30px);
+
+    @media #{$medium-up} {
+      margin: rem-calc(50px) 0 rem-calc(140px);
+    }  
+
+    h1 {
+      text-align: left;
+    }
+  }
+
   .split {
     @include grid-row();
     margin-top: rem-calc(50px);

@@ -1,13 +1,19 @@
 <%= render 'includes/header.html' %>
 <div id="ConnectPage" class="container">
   
+ <section class="header">
+    <h1>Support Us!</h1>
+    <h4>We can't save the world on our own.  Your advice and donations are invaluable.  (Even if they have a pricetag).</h4>
+  </section>
+
+
   <section class="split">
     <section class="contact">
-      <h3>Contact Us</h3>
+      <h3>Give us advice!</h3>
       <h6>Use the form below, or just <a href="mailto:cu.sustainabledesign@gmail.com">send us an email</a>.</h6>
       <form action="/contact.php" method="post">
         <label for="">Name</label>
-        <input type="text" name="name" placeholder="Bob Loblaw">
+        <input type="text" name="name" placeholder="Your Name">
         <label for="">Email</label>
         <input type="text" name="email" placeholder="you@example.com">
         <label for="">Message</label>
@@ -17,10 +23,10 @@
     </section>
 
     <section class="donate">
-      <h3>Donate</h3>
-      <h6><a href="https://www.giving.cornell.edu/give/?gifttype=6&gifttype2=131&comments=CUSD%20All%20Donations%20To%20E55-8744%20&amt=">Contribute</a> to our team!</h6>
+      <h3>Give us money!</h3>
+      <h6><a href="https://www.giving.cornell.edu/give/?gifttype=6&gifttype2=131&comments=CUSD%20All%20Donations%20To%20E55-8744%20&amt=" target="_blank">Donate</a> to our team!</h6>
       <img src="/assets/images/contribute/students_o.jpg" alt="">
-      <p class="caption">You can give money to this lovely, quirky, award-winning team of undergrads.</p>
+      <p class="caption">You can give money to this lovely, quirky, award-winning team.</p>
     </section>
   </section>
 
