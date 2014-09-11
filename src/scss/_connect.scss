@@ -14,11 +14,12 @@
 
   .split {
     @include grid-row();
+    @include grid-column($columns:12);
     margin-top: rem-calc(50px);
     margin-bottom: rem-calc(20px);
 
     @media #{$medium} {
-      margin-top: rem-calc(70px);
+      margin-top: rem-calc(50px);
       margin-bottom: rem-calc(100px);
     }
   }
