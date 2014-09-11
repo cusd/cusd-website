@@ -33,7 +33,6 @@
 
     @media #{$medium-up} {
       margin-bottom: rem-calc(50px);
-      max-width: rem-calc(1000px);
 
       aside {
         @include grid-column($columns:3);
