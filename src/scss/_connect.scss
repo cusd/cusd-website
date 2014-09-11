@@ -14,11 +14,11 @@
 
   .split {
     @include grid-row();
-    margin-top: rem-calc(50px);
+    margin-top: rem-calc(30px);
     margin-bottom: rem-calc(20px);
 
     @media #{$medium} {
-      margin-top: rem-calc(50px);
+      margin-top: rem-calc(30px);
       margin-bottom: rem-calc(100px);
     }
   }
