@@ -1,17 +1,16 @@
 #purposePage {
 
-  @media #{$medium-up} {
-    padding-bottom: rem-calc(50px);
+  margin-top: rem-calc(50px);
+
+  > section {
+    @include grid-row();
+    margin-bottom: rem-calc(50px);
   }
 
-  .header {
-
-    margin: rem-calc(20px) 0 rem-calc(30px);
-
-    @media #{$medium-up} {
-      margin: rem-calc(50px) 0 rem-calc(140px);
-    }  
-    }
+  .header-alignment {
+    @include grid-column($columns:12);
+    margin-bottom: rem-calc(20px);
+  }
 
   .belief {
 
