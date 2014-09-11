@@ -13,7 +13,7 @@
   }
 
   .belief {
-
+    @include grid-column($columns:12)
     @include grid-row();
     margin-bottom: rem-calc(40px);
 
@@ -37,21 +37,21 @@
       max-width: rem-calc(1000px);
 
       aside {
-        @include grid-column($columns:4);
+        @include grid-column($columns:3);
       }
 
       article {
-        @include grid-column($columns:8);
+        @include grid-column($columns:9);
 
       }
 
       &:nth-of-type(2n) {
         aside {
-          @include grid-column($columns:4, $push:8);
+          @include grid-column($columns:3, $push:9);
         }
 
         article {
-          @include grid-column($columns:8, $pull:4);
+          @include grid-column($columns:9, $pull:3);
         }
       }
     }
