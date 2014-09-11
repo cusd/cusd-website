@@ -9,7 +9,7 @@
 
   .header-alignment {
     @include grid-column($columns:12);
-    margin-bottom: rem-calc(20px);
+    margin-bottom: rem-calc(50px);
   }
 
   .belief {
