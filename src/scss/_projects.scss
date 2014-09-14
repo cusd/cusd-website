@@ -29,14 +29,21 @@
     article {
       @include grid-row();
       margin-bottom: rem-calc(50px);
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     aside {
       @include grid-column($columns:12);
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
 
       img {
         margin-bottom: rem-calc(20px);
       }
+
       
       @media #{$medium} {
         @include grid-column($columns:4);
