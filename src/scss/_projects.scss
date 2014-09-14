@@ -29,9 +29,6 @@
     article {
       @include grid-row();
       margin-bottom: rem-calc(50px);
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
     }
 
     aside {
