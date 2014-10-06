@@ -110,6 +110,15 @@ footer {
     }  
   }
 
+  .facebook {
+  background-image: url('assets/images/Social Media Icons/Facebook(grey).svg')
+  }
+
+  .facebook:hover {
+    background-image: url('assets/images/Social Media Icons/facebook(green).svg')
+  }
+
+
   .banner {
     display: inline-block;
     padding: rem-calc(5px 20px 5px);
