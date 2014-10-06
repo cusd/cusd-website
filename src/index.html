@@ -107,6 +107,41 @@
     </div>
   </section>
 
+<SCRIPT LANGUAGE="JavaScript">
+
+var num=1
+img1 = new Image ()
+img1.src = "assets/images/Misson/Mission Statement.jpg"
+img2 = new Image ()
+img2.src = "assets/images/Misson/Mission Statement2.jpg"
+img3 = new Image ()
+img3.src = "assets/images/Misson/Mission Statement3.jpg"
+
+function slideshowUp()
+{
+num=num+1
+if (num==4)
+{num=1}
+document.mypic.src=eval("img"+num+".src")
+}
+
+function slideshowBack()
+{
+num=num-1
+if (num==0)
+{num=4}
+document.mypic.src=eval("img"+num+".src")
+}
+
+</SCRIPT>
+
+<CENTER>
+<IMG SRC="assets/images/Misson/Mission Statement.jpg" NAME="mypic" BORDER=0 HEIGHT="388" WIDTH="600">
+<p>
+
+<A HREF="JavaScript:slideshowBack()"> Back</A>
+
+<A HREF="JavaScript:slideshowUp()"> Next</A> 
 
   <section class="global-impact">
     <header>
