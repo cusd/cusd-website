@@ -29,6 +29,51 @@
     </aside>
   </section>
 
+     <section class="mission-statement">
+    <header>
+      <h1>Mission Statement</h1>
+      <h4>The basis for all of our work.</h4>
+    </header>
+ 
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var num=1
+img1 = new Image ()
+img1.src = "assets/images/Mission/Mission Statement.jpg"
+img2 = new Image ()
+img2.src = "assets/images/Mission/Mission Statement2.jpg"
+img3 = new Image ()
+img3.src = "assets/images/Mission/Mission Statement3.jpg"
+
+function slideshowUp()
+{
+num=num+1
+if (num==4)
+{num=1}
+document.mypic.src=eval("img"+num+".src")
+}
+
+function slideshowBack()
+{
+num=num-1
+if (num==0)
+{num=3}
+document.mypic.src=eval("img"+num+".src")
+}
+
+</SCRIPT>
+
+<CENTER>
+<IMG SRC="assets/images/Mission/Mission Statement.jpg" NAME="mypic" BORDER=0 WIDTH=831>
+<p>
+<p>
+<A HREF="JavaScript:slideshowBack()"> Back</A>
+
+<A HREF="JavaScript:slideshowUp()"> Next</A> 
+</CENTER>
+</section>
+
   <section class="values">
     <header>
       <h1>Guiding Principles</h1>
@@ -70,6 +115,8 @@
     </article>
   </section>
 
+
+
   <section class="current-projects">
     <header>
       <h1>Current Projects</h1>
@@ -107,48 +154,7 @@
     </div>
   </section>
 
-  <section class="global-impact">
-    <header>
-      <h1>Mission Statement</h1>
-    </header>
-  </section>
 
-<SCRIPT LANGUAGE="JavaScript">
-
-var num=1
-img1 = new Image ()
-img1.src = "assets/images/Mission/Mission Statement.jpg"
-img2 = new Image ()
-img2.src = "assets/images/Mission/Mission Statement2.jpg"
-img3 = new Image ()
-img3.src = "assets/images/Mission/Mission Statement3.jpg"
-
-function slideshowUp()
-{
-num=num+1
-if (num==4)
-{num=1}
-document.mypic.src=eval("img"+num+".src")
-}
-
-function slideshowBack()
-{
-num=num-1
-if (num==0)
-{num=3}
-document.mypic.src=eval("img"+num+".src")
-}
-
-</SCRIPT>
-
-<CENTER>
-<IMG SRC="assets/images/Mission/Mission Statement.jpg" NAME="mypic" BORDER=0 WIDTH=600>
-<p>
-
-<A HREF="JavaScript:slideshowBack()"> Back</A>
-
-<A HREF="JavaScript:slideshowUp()"> Next</A> 
-</CENTER>
 
   <section class="global-impact">
     <header>

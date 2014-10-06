@@ -355,6 +355,10 @@
     }
   }
 
+  .mission-statement {
+    @extend %content-row;
+    margin-top: rem-calc(10px);
+
   .global-impact {
     @extend %content-row;
     margin-top: rem-calc(10px);
