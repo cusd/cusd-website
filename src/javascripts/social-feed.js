@@ -1,10 +1,10 @@
 if (typeof Object.create !== 'function') {
     Object.create = function(obj) {
-        function F() {};
+        function F() {}
         F.prototype = obj;
         return new F();
     };
-};
+}
 (function($, window, document, undefined) {
     $.fn.socialfeed = function(options) {
 
@@ -20,7 +20,7 @@ if (typeof Object.create !== 'function') {
         var options = $.extend(defaults, options),
             container = $(this),
             template,
-            social_networks = ['facebook', 'instagram', 'vk', 'google', 'blogspot', 'twitter'];
+            social_networks = ['tumblr', 'facebook', 'instagram', 'twitter'];
         container.empty().css('display', 'inline-block');
         //---------------------------------------------------------------------------------
 
@@ -75,12 +75,12 @@ if (typeof Object.create !== 'function') {
                     return '';
                 return string.replace(/(<([^>]+)>)|nbsp;|\s{2,}|/ig, "");
             }
-        }
+        };
 
         function SocialFeedPost(social_network, data) {
             this.content = data;
             this.content.social_network = social_network;
-            this.content.attachment = (this.content.attachment == undefined) ? '' : this.content.attachment;
+            this.content.attachment = (this.content.attachment === undefined) ? '' : this.content.attachment;
             this.content.time_ago = data.dt_create.fromNow();
             this.content.dt_create = this.content.dt_create.valueOf();
             this.content.text = Utility.wrapLinks(Utility.shorten(data.message + ' ' + data.description), data.social_network);
@@ -93,9 +93,9 @@ if (typeof Object.create !== 'function') {
                 var rendered_html = Feed.template(this.content);
                 var data = this.content;
 
-                if ($(container).children('[social-feed-id=' + data.id + ']').length != 0)
+                if ($(container).children('[social-feed-id=' + data.id + ']').length !== 0)
                     return false;
-                if ($(container).children().length == 0) {
+                if ($(container).children().length === 0) {
                     $(container).append(rendered_html);
                 } else {
                     var i = 0,
@@ -135,7 +135,7 @@ if (typeof Object.create !== 'function') {
                 //}
             }
 
-        }
+        };
         var Feed = {
                 template: false,
                 init: function() {
@@ -163,6 +163,95 @@ if (typeof Object.create !== 'function') {
                                 Feed.template = doT.template(template_html);
                                 return callback();
                             });
+                        }
+                    }
+                },
+                 tumblr: {
+                    posts: [],
+                    loaded: false,
+                    base: 'http://tumblr.com/',
+                    api: 'https://api.tumblr.com/method/',
+                    user_json_template: 'https://api.tumblr.com/method/' + 'users.get?fields=first_name,%20last_name,%20screen_name,%20photo&uid=',
+                    group_json_template: 'https://api.tumblr.com/method/' + 'groups.getById?fields=first_name,%20last_name,%20screen_name,%20photo&gid=',
+                    getData: function(account) {
+                        var request_url;
+
+                        switch (account[0]) {
+                            case '@':
+                                var username = account.substr(1);
+                                request_url = Feed.tumblr.api + 'wall.get?owner_id=' + username + '&filter=' + options.tumblr.source + '&count=' + options.tumblr.limit + '&callback=?';
+                                Utility.get_request(request_url, Feed.tumblr.utility.getPosts);
+                                break;
+                            case '#':
+                                var hashtag = account.substr(1);
+                                request_url = Feed.tumblr.api + 'newsfeed.search?q=' + hashtag + '&count=' + options.tumblr.limit + '&callback=?';
+                                Utility.get_request(request_url, Feed.tumblr.utility.getPosts);
+                                break;
+                            default:
+                        }
+                    },
+                    utility: {
+                        getPosts: function(json) {
+                            if (json.response)
+                                $.each(json.response, function() {
+                                    if (this != parseInt(this) && this.post_type == 'post') {
+                                        var owner_id = (this.owner_id) ? this.owner_id : this.from_id,
+                                            tumblr_wall_owner_url = (owner_id > 0) ? (Feed.tumblr.user_json_template + owner_id + '&callback=?') : (Feed.tumblr.group_json_template + (-1) * owner_id + '&callback=?'),
+                                            element = this;
+                                        Utility.get_request(tumblr_wall_owner_url, function(wall_owner) {
+                                            Feed.tumblr.utility.unifyPostData(wall_owner, element, json)
+                                        });
+                                    }
+                                });
+                        },
+                        unifyPostData: function(wall_owner, element, json) {
+                            var post = {};
+
+                            post.id = element.id;
+                            post.dt_create = moment.unix(element.date);
+                            post.description = ' ';
+                            post.message = Utility.stripHTML(element.text);
+                            if (options.show_media) {
+                                if (element.attachment) {
+                                    if (element.attachment.type == 'link')
+                                        post.attachment = '<img class="attachment" src="' + element.attachment.link.image_src + '" />';
+                                    if (element.attachment.type == 'video')
+                                        post.attachment = '<img class="attachment" src="' + element.attachment.video.image_big + '" />';
+                                    if (element.attachment.type == 'photo')
+                                        post.attachment = '<img class="attachment" src="' + element.attachment.photo.src_big + '" />';
+                                }
+                            }
+
+                            if (element.from_id > 0) {
+                                var tumblr_user_json = Feed.tumblr.user_json_template + element.from_id + '&callback=?';
+                                Utility.get_request(tumblr_user_json, function(user_json) {
+                                    var tumblr_post = new SocialFeedPost('tumblr', Feed.tumblr.utility.getUser(user_json, post, element, json));
+                                    tumblr_post.render();
+                                });
+
+                            } else {
+                                var tumblr_group_json = Feed.tumblr.group_json_template + (-1) * element.from_id + '&callback=?';
+                                Utility.get_request(tumblr_group_json, function(user_json) {
+                                    var tumblr_post = new SocialFeedPost('tumblr', Feed.tumblr.utility.getGroup(user_json, post, element, json));
+                                    tumblr_post.render();
+                                });
+                            }
+                        },
+                        getUser: function(user_json, post, element, json) {
+                            post.author_name = user_json.response[0].first_name + ' ' + user_json.response[0].last_name;
+                            post.author_picture = user_json.response[0].photo;
+                            post.author_link = Feed.tumblr.base + user_json.response[0].screen_name;
+                            post.link = Feed.tumblrbase + user_json.response[0].screen_name + '?w=wall' + element.from_id + '_' + element.id;
+
+                            return post;
+                        },
+                        getGroup: function(user_json, post, element, json) {
+                            post.author_name = user_json.response[0].name;
+                            post.author_picture = user_json.response[0].photo;
+                            post.author_link = Feed.tumblr.base + user_json.response[0].screen_name;
+                            post.link = Feed.tumblr.base + user_json.response[0].screen_name + '?w=wall-' + user_json.response[0].gid + '_' + element.id;
+
+                            return post;
                         }
                     }
                 },
@@ -274,11 +363,11 @@ if (typeof Object.create !== 'function') {
                             return '<img class="attachment" src="' + image_url + '" />';
                         },
                         getExternalImageURL: function(image_url, parameter) {
-                            image_url = decodeURIComponent(image_url).split(parameter + '=')[1]
+                            image_url = decodeURIComponent(image_url).split(parameter + '=')[1];
                             if (image_url.indexOf('fbcdn-sphotos') == -1) {
                                 return image_url.split('&')[0];
                             } else {
-                                return image_url
+                                return image_url;
                             }
 
                         },
@@ -311,69 +400,6 @@ if (typeof Object.create !== 'function') {
                                     }
                                 }
                             }
-                            return post;
-                        }
-                    }
-                },
-                google: {
-                    posts: [],
-                    loaded: false,
-                    api: 'https://www.googleapis.com/plus/v1/',
-                    getData: function(account) {
-                        var request_url;
-                        switch (account[0]) {
-                            case '#':
-                                var hashtag = account.substr(1);
-                                request_url = Feed.google.api + 'activities?query=' + hashtag + '&key=' + options.google.access_token + '&maxResults=' + options.google.limit;
-                                Utility.get_request(request_url, Feed.google.utility.getPosts);
-                                break;
-                            case '@':
-                                var username = account.substr(1);
-                                request_url = Feed.google.api + 'people/' + username + '/activities/public?key=' + options.google.access_token + '&maxResults=' + options.google.limit;
-                                Utility.get_request(request_url, Feed.google.utility.getPosts);
-                                break;
-                            default:
-                        }
-                    },
-                    utility: {
-                        getPosts: function(json) {
-                            if (json.items)
-                                $.each(json.items, function(i) {
-                                    var post = new SocialFeedPost('google', Feed.google.utility.unifyPostData(json.items[i]));
-                                    post.render();
-                                })
-                        },
-                        unifyPostData: function(element) {
-                            var post = {};
-
-                            post.id = element.id;
-                            post.attachment = '';
-                            post.description = '';
-                            post.dt_create = moment(element.published);
-                            post.author_link = element.actor.url;
-                            post.author_picture = element.actor.image.url;
-                            post.author_name = element.actor.displayName;
-
-                            if (options.show_media === true) {
-                                if (element.object.attachments) {
-                                    $.each(element.object.attachments, function() {
-                                        var image = '';
-                                        if (this.fullImage) {
-                                            image = this.fullImage.url;
-                                        } else {
-                                            if (this.objectType == 'album') {
-                                                if (this.thumbnails && this.thumbnails.length > 0)
-                                                    if (this.thumbnails[0].image)
-                                                        image = this.thumbnails[0].image.url;
-                                            }
-                                        }
-                                        post.attachment = '<img class="attachment" src="' + image + '"/>';
-                                    });
-                                }
-                            }
-                            post.message = element.title;
-                            post.link = element.url;
-
                             return post;
                         }
                     }
@@ -431,127 +457,6 @@ if (typeof Object.create !== 'function') {
                         }
                     }
                 },
-                vk: {
-                    posts: [],
-                    loaded: false,
-                    base: 'http://vk.com/',
-                    api: 'https://api.vk.com/method/',
-                    user_json_template: 'https://api.vk.com/method/' + 'users.get?fields=first_name,%20last_name,%20screen_name,%20photo&uid=',
-                    group_json_template: 'https://api.vk.com/method/' + 'groups.getById?fields=first_name,%20last_name,%20screen_name,%20photo&gid=',
-                    getData: function(account) {
-                        var request_url;
-
-                        switch (account[0]) {
-                            case '@':
-                                var username = account.substr(1);
-                                request_url = Feed.vk.api + 'wall.get?owner_id=' + username + '&filter=' + options.vk.source + '&count=' + options.vk.limit + '&callback=?';
-                                Utility.get_request(request_url, Feed.vk.utility.getPosts);
-                                break;
-                            case '#':
-                                var hashtag = account.substr(1);
-                                request_url = Feed.vk.api + 'newsfeed.search?q=' + hashtag + '&count=' + options.vk.limit + '&callback=?';
-                                Utility.get_request(request_url, Feed.vk.utility.getPosts);
-                                break;
-                            default:
-                        }
-                    },
-                    utility: {
-                        getPosts: function(json) {
-                            if (json.response)
-                                $.each(json.response, function() {
-                                    if (this != parseInt(this) && this.post_type == 'post') {
-                                        var owner_id = (this.owner_id) ? this.owner_id : this.from_id,
-                                            vk_wall_owner_url = (owner_id > 0) ? (Feed.vk.user_json_template + owner_id + '&callback=?') : (Feed.vk.group_json_template + (-1) * owner_id + '&callback=?'),
-                                            element = this;
-                                        Utility.get_request(vk_wall_owner_url, function(wall_owner) {
-                                            Feed.vk.utility.unifyPostData(wall_owner, element, json)
-                                        });
-                                    }
-                                });
-                        },
-                        unifyPostData: function(wall_owner, element, json) {
-                            var post = {};
-
-                            post.id = element.id;
-                            post.dt_create = moment.unix(element.date);
-                            post.description = ' ';
-                            post.message = Utility.stripHTML(element.text);
-                            if (options.show_media) {
-                                if (element.attachment) {
-                                    if (element.attachment.type == 'link')
-                                        post.attachment = '<img class="attachment" src="' + element.attachment.link.image_src + '" />';
-                                    if (element.attachment.type == 'video')
-                                        post.attachment = '<img class="attachment" src="' + element.attachment.video.image_big + '" />';
-                                    if (element.attachment.type == 'photo')
-                                        post.attachment = '<img class="attachment" src="' + element.attachment.photo.src_big + '" />';
-                                }
-                            }
-
-                            if (element.from_id > 0) {
-                                var vk_user_json = Feed.vk.user_json_template + element.from_id + '&callback=?';
-                                Utility.get_request(vk_user_json, function(user_json) {
-                                    var vk_post = new SocialFeedPost('vk', Feed.vk.utility.getUser(user_json, post, element, json));
-                                    vk_post.render();
-                                });
-
-                            } else {
-                                var vk_group_json = Feed.vk.group_json_template + (-1) * element.from_id + '&callback=?';
-                                Utility.get_request(vk_group_json, function(user_json) {
-                                    var vk_post = new SocialFeedPost('vk', Feed.vk.utility.getGroup(user_json, post, element, json));
-                                    vk_post.render();
-                                });
-                            }
-                        },
-                        getUser: function(user_json, post, element, json) {
-                            post.author_name = user_json.response[0].first_name + ' ' + user_json.response[0].last_name;
-                            post.author_picture = user_json.response[0].photo;
-                            post.author_link = Feed.vk.base + user_json.response[0].screen_name;
-                            post.link = Feed.vk.base + user_json.response[0].screen_name + '?w=wall' + element.from_id + '_' + element.id;
-
-                            return post;
-                        },
-                        getGroup: function(user_json, post, element, json) {
-                            post.author_name = user_json.response[0].name;
-                            post.author_picture = user_json.response[0].photo;
-                            post.author_link = Feed.vk.base + user_json.response[0].screen_name;
-                            post.link = Feed.vk.base + user_json.response[0].screen_name + '?w=wall-' + user_json.response[0].gid + '_' + element.id;
-
-                            return post;
-                        }
-                    }
-                },
-                blogspot: {
-                    loaded: false,
-                    getData: function(account) {
-                        var url;
-
-                        switch (account[0]) {
-                            case '@':
-                                var username = account.substr(1);
-                                url = 'http://' + username + '.blogspot.com/feeds/posts/default?alt=json-in-script&callback=?';
-                                request(url, getPosts);
-                                break;
-                            default:
-                        }
-                    },
-                    utility: {
-                        getPosts: function(json) {
-                            $.each(json.feed.entry, function() {
-                                var post = {},
-                                    element = this;
-                                post.id = element.id['$t'].replace(/[^a-z0-9]/gi, '');
-                                post.dt_create = moment((element.published['$t']));
-                                post.author_link = element.author[0]['uri']['$t'];
-                                post.author_picture = 'http:' + element.author[0]['gd$image']['src'];
-                                post.author_name = element.author[0]['name']['$t'];
-                                post.message = element.title['$t'] + '</br></br>' + stripHTML(element.content['$t']);
-                                post.description = '';
-                                post.link = element.link.pop().href;
-
-                                if (options.show_media) {
-                                    if (element['media$thumbnail'])
-                                        post.attachment = '<img class="attachment" src="' + element['media$thumbnail']['url'] + '" />';
-                                }
 
                                 post.render();
 
