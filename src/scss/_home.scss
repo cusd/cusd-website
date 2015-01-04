@@ -199,6 +199,11 @@
       list-style:none;
     }
 
+    ol.tumblr_posts .tumblr_title {
+      font-size: 15px;
+      } 
+
+
     @media #{$large-up} {
       @include grid-column($columns:5, $offset: 1);
     }
