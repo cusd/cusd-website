@@ -195,8 +195,8 @@
       @include grid-column($columns:6);
     }
 
-    li.tumblr-post {
-      list-style: none;
+    ol.tumblr_posts{
+      list-style:none;
     }
 
     @media #{$large-up} {
