@@ -202,7 +202,9 @@
     }
 
     ol.tumblr_posts .tumblr_title {
-      font-size: 24px;
+      font-size: 20px;
+      font-family: join('globerbook', $body-font-family);
+      font-color: #333
       } 
 
 
