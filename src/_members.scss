@@ -36,12 +36,17 @@
 
 }
 
- .resources {
+.resources {
 
     article {
       @include grid-row();
-      @include grid-column($columns:12);
       margin-bottom: rem-calc(50px);
+    }
+
+        section {
+      @include grid-column($columns:12);
+      
+      }
     }
 
     }
