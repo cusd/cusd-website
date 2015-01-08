@@ -5,12 +5,28 @@
   > section {
     @include grid-row();
     margin-bottom: rem-calc(50px);
-  
-}
+  }
+
   .header-alignment {
     @include grid-column($columns:12);
     margin-bottom: rem-calc(20px);
   }
 
-  
+.stories {
+
+    article {
+      @include grid-row();
+      margin-bottom: rem-calc(50px);
+    }
+
+
+    section {
+      @include grid-column($columns:12);
+      
+      @media #{$medium} {
+        @include grid-column($columns:8);
+      }
+    }
+
+}
 }

@@ -8,9 +8,30 @@
   }
 
   .header-alignment {
-    text-align: center;
+    @include grid-column($columns:12);
     margin-bottom: rem-calc(20px);
   }
 
-  
+     h1 {
+      text-align: center;
+    }
+
+    
+.stories {
+
+    article {
+      @include grid-row();
+      margin-bottom: rem-calc(50px);s
+    }
+
+
+    section {
+      @include grid-column($columns:12);
+      
+      @media #{$medium} {
+        @include grid-column($columns:8);
+      }
+    }
+
+}
 }
