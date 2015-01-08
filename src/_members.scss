@@ -34,19 +34,10 @@
       text-align: center;
     }
 
-    article {
-      @include grid-row();
-      margin-bottom: rem-calc(50px);
+    p {
+      margin: auto;
       text-align: center;
-    }
-
-
-    section {
-      @include grid-column($columns:12);
-      
-      @media #{$medium} {
-        @include grid-column($columns:8);
-      }
+      max-width: 30em;
     }
 
 }
