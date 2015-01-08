@@ -12,7 +12,7 @@
     margin-bottom: rem-calc(20px);
   }
 
-.stories {
+.members {
 
     article {
       @include grid-row();
@@ -27,6 +27,21 @@
         @include grid-column($columns:8);
       }
     }
+    }
+
+.calendar {
+
+    h3 {
+      text-align: center;
+    }
 
 }
+
+.resources {
+      @include grid-column($columns:12);
+      @include grid-row();
+      margin-bottom: rem-calc(50px);
+      
+}
+
 }
