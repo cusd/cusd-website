@@ -27,6 +27,7 @@
         @include grid-column($columns:8);
       }
     }
+    }
 
 .calendar {
 
@@ -43,13 +44,10 @@
       margin-bottom: rem-calc(50px);
     }
 
-        section {
+    section {
       @include grid-column($columns:12);
       
       }
     }
-
-    }
-  }
 
 }
