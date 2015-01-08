@@ -19,22 +19,35 @@
       margin-bottom: rem-calc(50px);
     }
 
+    section {
+      @include grid-column($columns:12);
+      }
+}
+
+.calendar {
+
+    article {
+      @include grid-row();
+      margin-bottom: rem-calc(50px);
+    }
 
     section {
       @include grid-column($columns:12);
       }
-    }
-
-.calendar {
-
-    @include grid-column($columns:12);
-    margin-bottom: rem-calc(20px);
 
 }
 
 .resources {
+    
+    article {
       @include grid-row();
       margin-bottom: rem-calc(50px);
+    }
+    
+    section {
+      @include grid-column($columns:12);
+    }
+
       
 }
 
