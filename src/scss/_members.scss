@@ -31,14 +31,12 @@
 
 .calendar {
 
-    h3 {
-      text-align: center;
-    }
+    @include grid-column($columns:12);
+    margin-bottom: rem-calc(20px);
 
 }
 
 .resources {
-      @include grid-column($columns:12);
       @include grid-row();
       margin-bottom: rem-calc(50px);
       
