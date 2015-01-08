@@ -12,7 +12,7 @@
     margin-bottom: rem-calc(20px);
   }
 
-.stories {
+.members {
 
     article {
       @include grid-row();
@@ -35,4 +35,15 @@
     }
 
 }
+
+ .resouces {
+
+    article {
+      @include grid-row();
+      margin-bottom: rem-calc(50px);
+    }
+
+    }
+  }
+
 }
