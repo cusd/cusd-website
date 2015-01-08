@@ -30,6 +30,10 @@
 
 .calendar {
 
+    h3 {
+      text-align: center;
+    }
+
     article {
       @include grid-row();
       margin-bottom: rem-calc(50px);
