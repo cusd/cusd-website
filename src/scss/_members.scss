@@ -22,11 +22,7 @@
 
     section {
       @include grid-column($columns:12);
-      
-      @media #{$medium} {
-        @include grid-column($columns:8);
       }
-    }
     }
 
 .calendar {
