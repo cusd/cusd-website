@@ -19,15 +19,16 @@
 
 @mixin homepage_hero($class, $image) {
   &[data-slide="#{$class}"] {
-    background-image: url(/assets/images/home/hero/5_s.jpg);
+    background-image: url(/assets/images/home/hero/#{$image}_s.jpg);
     @media #{$medium-up} {
-      background-image: url(/assets/images/home/hero/5_m.jpg);
+      background-image: url(/assets/images/home/hero/#{$image}_m.jpg);
     }
     @media #{$large-up} {
-      background-image: url(/assets/images/home/hero/5_l.jpg);
+      background-image: url(/assets/images/home/hero/#{$image}_l.jpg);
     }
   }
 }
+
 
 @mixin article-corner-flag(
 
@@ -120,10 +121,35 @@
   }
 }
 
+ @for $i from 1 through 4 {
+      @include homepage_hero("#{$i}", "#{$i}");
+    }
+
+    .cover {
+      @include clearfix();
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.5);
+      @media #{$medium-up} {
+        background: rgba(0,0,0,0.65);
+      }
+    }
+    .logo {
+      position:absolute;
+      top:50%;
+      left:50%;
+      -webkit-transform: translate(-50%,-50%);
+      max-width: 80%;
+    }
+
+
 #homePage {
   .hero {
     position: relative;
-    background: url(/assets/images/home/hero/5_s.jpg) no-repeat center center fixed; 
+    background: url(/assets/images/home/hero/#_s.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -132,10 +158,10 @@
     margin-bottom: rem-calc(40px);
     @media #{$medium-up} {
       height: 100vh;
-      background-image: url(/assets/images/home/hero/5_m.jpg);
+      background-image: url(/assets/images/home/hero/#_m.jpg);
     }
     @media #{$large-up} {
-      background-image: url(/assets/images/home/hero/5_l.jpg);
+      background-image: url(/assets/images/home/hero/#_l.jpg);
     }
     
     @for $i from 1 through 4 {
