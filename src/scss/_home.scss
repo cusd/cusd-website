@@ -149,7 +149,7 @@
 #homePage {
   .hero {
     position: relative;
-    background: url(/assets/images/home/hero/#_s.jpg) no-repeat center center fixed; 
+    background: url(/assets/images/home/hero/1_s.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -158,10 +158,10 @@
     margin-bottom: rem-calc(40px);
     @media #{$medium-up} {
       height: 100vh;
-      background-image: url(/assets/images/home/hero/#_m.jpg);
+      background-image: url(/assets/images/home/hero/1_m.jpg);
     }
     @media #{$large-up} {
-      background-image: url(/assets/images/home/hero/#_l.jpg);
+      background-image: url(/assets/images/home/hero/1_l.jpg);
     }
     
     @for $i from 1 through 4 {
