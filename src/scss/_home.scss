@@ -18,7 +18,7 @@
 }
 
 @mixin homepage_hero($class, $image) {
-  &[data-slide="#{$class}"] {
+  [data-slide="#{$class}"] {
     background-image: url(/assets/images/home/hero/#{$image}_s.jpg);
     @media #{$medium-up} {
       background-image: url(/assets/images/home/hero/#{$image}_m.jpg);
