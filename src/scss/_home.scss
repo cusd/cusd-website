@@ -146,6 +146,8 @@
       @include homepage_hero("#{$i}", "#{$i}");
     }
 
+    }
+
     .cover {
       @include clearfix();
       position:absolute;
