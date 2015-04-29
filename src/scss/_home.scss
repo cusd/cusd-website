@@ -145,6 +145,7 @@
     @for $i from 1 through 4 {
       @include homepage_hero("#{$i}", "#{$i}");
     }
+    }
 
     .cover {
       @include clearfix();
@@ -166,7 +167,7 @@
       max-width: 80%;
     }
 
-  } 
+   
 
 
 
