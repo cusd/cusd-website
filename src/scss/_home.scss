@@ -146,12 +146,6 @@
       @include homepage_hero("#{$i}", "#{$i}");
     }
 
-  } 
-
-   @for $i from 1 through 4 {
-      @include homepage_hero("#{$i}", "#{$i}");
-    }
-
     .cover {
       @include clearfix();
       position:absolute;
@@ -171,6 +165,10 @@
       -webkit-transform: translate(-50%,-50%);
       max-width: 80%;
     }
+
+  } 
+
+
 
   @media #{$medium-only} {
     h1 {
