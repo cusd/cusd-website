@@ -1,0 +1,12 @@
+#!/bin/bash
+
+rm -rf build/ && bundle exec middleman build
+
+if [[ $1 == "production" ]] || [[ $1 == "prod" ]] 
+then
+  env="PRODUCTION"
+else
+  env="STAGING"
+fi
+
+TARGET=$env bundle exec middleman deploy
