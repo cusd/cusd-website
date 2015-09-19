@@ -3,6 +3,16 @@
   overflow: hidden;
   background: $header-background;
   box-shadow: $subtle-shadow;
+
+  .index & {
+    background: none;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+  }
   
   &__wrapper {
     @include grid-row();
@@ -37,6 +47,10 @@
 
     @media #{$large-up} {
       display: block;
+
+      // .index & {
+      //   display: none;
+      // }
     }
   }
 }
@@ -73,9 +87,14 @@
           font-size: rem-calc(18);
           text-align: center;
           color: $logo-text-gray;
-
+          
           &:hover {
             background: #f8f8f8;
+            
+            .index & {
+              background: none;
+              text-decoration: underline;
+            }
           }
         }
 

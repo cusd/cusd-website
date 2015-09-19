@@ -120,6 +120,7 @@ $font-weight-semibold: $font-weight-bold;
 // $black       : #000000;
 
 $cusd-green: #3FAB6D;
+$cusd-blue: #75B7AE;
 $seg: #E04D25;
 $ord: #8590B7;
 $gbmp: #E47B75;
@@ -138,7 +139,7 @@ $subtle-shadow: rem-calc(0 0 2 0 ) rgba(0,0,0,0.2);
 
 // We use these as default colors throughout
 $primary-color: $cusd-green;//#008CBA;
-$secondary-color: #84C3BB;//#e7e7e7;
+$secondary-color: $cusd-blue;//#e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;

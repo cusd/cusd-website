@@ -1,23 +1,27 @@
-.cover-video {
-  min-height: rem-calc(450);
-  height: calc(100vh - 180px);
+.pattern-banner { 
+  min-height: rem-calc(550);
+  // height: calc(100vh - 60px);
   width: 100%;
-  @include video-thumbnail($image: "videos/video-1.jpg");
+  background: image-url("pattern1-opacity.png"), linear-gradient( 0deg, rgba($secondary-color, 1) 0%, rgba($body-background, 1) 140% );
 
-  &__overlay {
-    background-color: rgba($primary-color, 0.5);
-    display: block;
-    width: 100%;
-    height: 100%;
+  &__wrapper {
+    @include grid-row();
+    padding-top: rem-calc(200);
+  }
+
+  &__text {
+    @include grid-column($columns: 12);
     
-    &__controls {
-
-      @include video-controls($text: true);
-
-      > a {
-        @include play-button($size: 110);        
-      }
+    h1, h2 {
+      color: #fafafa;
+      text-shadow: $subtle-shadow;
     }
+
+    h1 {
+      font-size: rem-calc(52);
+      font-weight: $font-weight-regular;
+    }
+
   }
 }
 
@@ -25,6 +29,7 @@
 
 .homepage-blurb {
   @include grid-column($columns: 12);
+  margin-top: rem-calc(32);
 
   @media #{$medium-up} {
     @include grid-column($columns: 7);
@@ -33,6 +38,7 @@
 
 .homepage-videos {
   @include grid-column($columns: 12);
+  margin-top: rem-calc(32);
 
   @media #{$medium-up} {
     @include grid-column($columns: 4, $offset: 1);
