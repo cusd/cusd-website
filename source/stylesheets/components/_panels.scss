@@ -26,3 +26,79 @@
     transform: translateX(-50%);
   }
 }
+
+.email-list-callout {
+  padding-top: rem-calc(72);
+  @include grid-row();
+
+  > h3 {
+    @include grid-column($columns: 12);
+
+    &:not(:last-child) {
+      margin-bottom: rem-calc(32);
+    }
+  }
+
+  > article {
+    @include grid-column($columns: 12);
+  }
+
+  &__panel {
+    @include callout-panel();
+    padding: 0;
+    @include clearfix();
+  }
+
+  &__image {
+    background: image-url('project-photos/seg-banner.jpg') no-repeat center left scroll;
+    background-size: cover;
+    width: 33%;
+    height: 100%;
+    min-height: rem-calc(300);
+    position: absolute;
+    @include side-radius(left, $global-radius);
+  }
+
+  &__content {
+    float: right;
+    width: 66%;
+    padding: rem-calc(24);
+
+    h3 {
+      margin-bottom: rem-calc(12);
+    }
+  }
+
+  &__form {
+    padding-top: rem-calc(44);
+
+    &__wrapper {
+      @include form-row-base();
+    }
+
+    &__inputs {
+      @include grid-column($columns: 9, $collapse: true);
+
+      label {
+        @include form-label();
+      }
+
+      input {
+        @include form-element();
+        @include side-radius(left, $button-radius);
+      }
+    }
+
+    &__submit {
+      @include grid-column($columns: 3, $collapse: true);
+
+      input {
+        margin-top: rem-calc(24);
+        height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1)); 
+        @include postfix(false, false, true);
+        @include radius(0); 
+        @include side-radius(right, $button-radius);
+      }
+    }
+  }
+}

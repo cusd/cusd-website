@@ -44,7 +44,7 @@
         <div class="main-nav">
           <ul class="main-nav__menu">
             <li> 
-              <a href="https://docs.google.com/forms/d/1z_U_r4fsO2PAWWIBkzUQ50Y92RjJwMxvXeMfGy4UO6Y/viewform" class="button">Apply</a>
+              <a href="#learnMore" class="button">Learn More</a>
             </li>
             <li><%= link_to 'About', '/about.html' %></li>
             <li><%= link_to 'Projects', '/projects.html' %></li>
@@ -59,6 +59,33 @@
     </header>
 
     <%= yield %>
+
+    <aside class="email-list-callout" id="learnMore">
+      <h3>Learn More and Get Involved</h3>
+      <article>
+        <div class="email-list-callout__panel">
+          <div class="email-list-callout__image"></div>
+          <div class="email-list-callout__content">
+            <h3>Get Updates About Sustainable Education Ghana</h3>
+            <p>For the past six months, CUSD students have been collaborating with Voices of African Mothers to develop a design for the schoolhouse and vision for VAM Village. Our goal is to create an ecological, educational hub that will draw people in from all over Ghana to support women’s empowerment.</p>
+            <p>Subscribe to recieve email updates about what we're doing and how you can help.</p>
+            <form action="//cornell.us4.list-manage.com/subscribe/post?u=b00f148fbffc0cb781b859b6e&amp;id=b6ca81aa1f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="email-list-callout__form" target="_blank" novalidate>
+              <div class="email-list-callout__form__wrapper">
+                <div class="email-list-callout__form__inputs">
+                  <label for="mce-EMAIL">Email Address 
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                  </label>
+                  <div style="position: absolute; left: -5000px;"><input type="text" name="b_b00f148fbffc0cb781b859b6e_b6ca81aa1f" tabindex="-1" value=""></div>
+                </div>
+                <div class="email-list-callout__form__submit">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </article>
+    </aside>
 
     <footer class="site-footer" id="mobileMenu">
       <div class="site-footer__mobile-cta">
