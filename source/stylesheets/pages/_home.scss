@@ -6,7 +6,7 @@
 
   &__wrapper {
     @include grid-row();
-    padding-top: rem-calc(200);
+    padding-top: rem-calc(150);
   }
 
   &__text {
@@ -18,8 +18,13 @@
     }
 
     h1 {
-      font-size: rem-calc(52);
+      font-size: rem-calc(72);
+      line-height: 1.1;
       font-weight: $font-weight-regular;
+    }
+
+    h2 {
+      // font-size: rem-calc(27);
     }
 
   }

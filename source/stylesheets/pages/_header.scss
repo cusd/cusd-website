@@ -34,6 +34,10 @@
     float: left;
     max-height: rem-calc(78);
     margin: rem-calc(21 0);
+
+    .index & {
+      max-height: rem-calc(58);
+    }
   }
 
   &__text {
@@ -47,6 +51,9 @@
     
     .index & {
       color: $body-background;
+      font-size: rem-calc(23);
+      line-height: rem-calc(28);
+
     }
 
     @media #{$large-up} {
@@ -91,6 +98,7 @@
 
           .index & {
             color: $body-background;
+            line-height: rem-calc(100);
           }
           
           &:hover {
@@ -107,6 +115,7 @@
           margin: rem-calc(40 0);
 
           .index & {
+            margin: rem-calc(31 0);
             border: none;
           }          
         }
