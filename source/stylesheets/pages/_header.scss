@@ -44,13 +44,14 @@
     font-weight: $font-weight-light;
     color: $logo-text-gray;
     display: none;
+    
+    .index & {
+      color: $body-background;
+    }
 
     @media #{$large-up} {
       display: block;
 
-      // .index & {
-      //   display: none;
-      // }
     }
   }
 }
@@ -87,6 +88,10 @@
           font-size: rem-calc(18);
           text-align: center;
           color: $logo-text-gray;
+
+          .index & {
+            color: $body-background;
+          }
           
           &:hover {
             background: #f8f8f8;

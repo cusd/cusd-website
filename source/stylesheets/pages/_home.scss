@@ -2,7 +2,7 @@
   min-height: rem-calc(550);
   // height: calc(100vh - 60px);
   width: 100%;
-  background: image-url("pattern1-opacity.png"), linear-gradient( 0deg, rgba($secondary-color, 1) 0%, rgba($body-background, 1) 140% );
+  background: image-url("pattern1-opacity.png"), $secondary-color;//linear-gradient( 0deg, rgba($secondary-color, 1) 0%, rgba($body-background, 1) 130% );
 
   &__wrapper {
     @include grid-row();
@@ -13,7 +13,7 @@
     @include grid-column($columns: 12);
     
     h1, h2 {
-      color: #fafafa;
+      color: $body-background;
       text-shadow: $subtle-shadow;
     }
 
