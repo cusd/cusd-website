@@ -52,17 +52,29 @@
   &__image {
     background: image-url('project-photos/seg-banner.jpg') no-repeat center left scroll;
     background-size: cover;
-    width: 33%;
-    height: 100%;
-    min-height: rem-calc(300);
     position: absolute;
-    @include side-radius(left, $global-radius);
+    width: 100%;
+    min-height: rem-calc(150);
+    @include side-radius(top, $global-radius);
+
+    @media #{$medium-up} {
+      width: 33%;
+      height: 100%;
+      min-height: rem-calc(300);
+      @include side-radius(right, 0);
+      @include side-radius(left, $global-radius);
+    }
   }
 
   &__content {
-    float: right;
-    width: 66%;
     padding: rem-calc(24);
+    padding-top: rem-calc(174);
+    
+    @media #{$medium-up} {
+      padding-top: rem-calc(24);
+      width: 66%;
+      float: right;
+    }
 
     h3 {
       margin-bottom: rem-calc(12);
@@ -70,14 +82,22 @@
   }
 
   &__form {
-    padding-top: rem-calc(44);
+    padding-top: rem-calc(24);
+
+    @media #{$medium-up} {
+      padding-top: rem-calc(44);
+    }
 
     &__wrapper {
       @include form-row-base();
     }
 
     &__inputs {
-      @include grid-column($columns: 9, $collapse: true);
+      @include grid-column($columns: 12, $collapse: true);
+
+      @media #{$medium-up} {
+        @include grid-column($columns: 9, $collapse: true);
+      }
 
       label {
         @include form-label();
@@ -85,19 +105,32 @@
 
       input {
         @include form-element();
-        @include side-radius(left, $button-radius);
+        border-radius: $button-radius;
+        margin-top: rem-calc(4);
+
+        @media #{$medium-up} {
+          @include side-radius(right, 0);
+        }
       }
     }
 
     &__submit {
-      @include grid-column($columns: 3, $collapse: true);
+      @include grid-column($columns: 12, $collapse: true);
+
+      @media #{$medium-up} {
+        @include grid-column($columns: 3, $collapse: true);
+      }
 
       input {
-        margin-top: rem-calc(24);
         height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1)); 
         @include postfix(false, false, true);
         @include radius(0); 
-        @include side-radius(right, $button-radius);
+        border-radius: $button-radius;
+
+        @media #{$medium-up} {
+          @include side-radius(left, 0);
+          margin-top: rem-calc(28);
+        }
       }
     }
   }
