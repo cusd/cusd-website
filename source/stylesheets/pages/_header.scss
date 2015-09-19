@@ -105,6 +105,10 @@
 
         > .button { 
           margin: rem-calc(40 0);
+
+          .index & {
+            border: none;
+          }          
         }
       }
     }
