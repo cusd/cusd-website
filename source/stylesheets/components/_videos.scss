@@ -16,6 +16,7 @@
   box-shadow: $subtle-shadow;
   margin: rem-calc(32) 45%;
   margin: rem-calc(32) calc(50% - #{$size/2}px);
+  @include single-transition(background-color);
 
   &:after {
     content:'';
@@ -34,6 +35,10 @@
     -o-transform: translateX(-30%) translateY(-50%);
     -ms-transform: translateX(-30%) translateY(-50%);
     transform: translateX(-30%) translateY(-50%);
+  }
+
+  &:hover {
+    background: $button-bg-hover;
   }
 }
 
