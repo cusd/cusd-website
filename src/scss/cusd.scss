@@ -1,0 +1,159 @@
+@import "fonts";
+@import "settings";
+@import "lib/foundation";
+
+body {
+  overflow-x: hidden;
+}
+
+$off-canvas-bg-hover: #f0f0f0 !default;
+$off-canvas-bg-active: #ddd !default;
+$off-canvas-bg-active-hover: darken(#ddd, 5%) !default;
+
+.tab-bar {
+  -webkit-box-shadow: 0 2px 5px rgba(#000, 0.25);
+
+  .left-small {
+    border: none;
+  }
+  
+  @media only screen and (min-width: 840px) {
+    display: none;
+  }
+}
+
+.off-canvas-list li {
+  &:hover {
+    background: $off-canvas-bg-hover;
+  }
+
+  &.active {
+    background: $off-canvas-bg-active;
+
+    &:hover {
+      background: $off-canvas-bg-active-hover;
+    }
+  }
+}
+
+$topbar-scroll-height: 40px !default;
+$topbar-scroll-transition: 300ms !default;
+
+.top-bar {
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+  display: none;
+
+  @media only screen and (min-width: 840px) {
+    display: block;
+  }
+
+  -webkit-transition: height $topbar-scroll-transition, line-height $topbar-scroll-transition;
+  .name {
+    -webkit-transition: height $topbar-scroll-transition;
+  }
+  li {
+    &:not(.has-form) {
+      a:not(.button) {
+        -webkit-transition: line-height $topbar-scroll-transition;
+      }
+    }
+    &.active:not(.has-form) {
+      a:not(.button) {
+        -webkit-transition: line-height $topbar-scroll-transition, padding $topbar-scroll-transition;
+      }
+    }
+  }
+}
+
+.fixed .top-bar {
+  height: $topbar-scroll-height;
+  line-height: $topbar-scroll-height;
+  .name {
+    height: $topbar-scroll-height;
+  }
+  li {
+    &:not(.has-form) {
+      a:not(.button) {
+        line-height: $topbar-scroll-height;
+      }
+    }
+    &.active:not(.has-form) {
+      a:not(.button) {
+        line-height: $topbar-scroll-height;
+      }
+    }
+  }
+}
+
+.button {
+  border-bottom: rem-calc(3px) solid darken($primary-color, 10%);
+  transition: background 300ms, -webkit-transform 50ms, border 50ms;
+
+  &:active {
+    -webkit-transform: translateY(rem-calc(2px));
+    border-bottom-width: rem-calc(1px);
+  }
+}
+
+footer {
+  @include grid-row();
+  padding-top: rem-calc(30px);
+  padding-bottom: rem-calc(10px);
+  font-size: 0.7rem;
+
+  div {
+    @include grid-column($columns:12,$center:true);
+    text-align: center;
+    @media #{$small-only} {
+      padding-left: 0;
+      padding-right: 0;
+    }  
+  }
+
+  .banner {
+    display: inline-block;
+    padding: rem-calc(5px 20px 5px);
+    margin-bottom: rem-calc(10px);
+    background: $primary-color;
+    color: #fafafa;
+    position: relative;
+    font-size: 0.75rem;
+    line-height: 1;
+    width: 100%;
+
+    @media #{$medium-up} {
+      width: auto;
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border: rem-calc(11px) solid transparent;
+      }
+
+      &:before {
+        border-left-color: #fafafa;
+        left: 0;
+        top: 0;
+      }
+
+      &:after {
+        border-right-color: #fafafa;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+}
+
+@import "home";
+@import "people";
+@import "purpose";
+@import "connect";
+@import "projects";
+@import "impact";
+@import "password";
+@import "error";
+@import "members";
+@import "projects2";

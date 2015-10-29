@@ -1,0 +1,9 @@
+#impactPage {
+
+  margin-top: rem-calc(50px);
+
+  > section {
+    @include grid-row();
+    margin-bottom: rem-calc(50px);
+  }
+  }

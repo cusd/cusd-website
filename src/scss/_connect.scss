@@ -1,0 +1,63 @@
+#ConnectPage {
+
+  margin-top: rem-calc(50px);
+
+  > section {
+    @include grid-row();
+    margin-bottom: rem-calc(20px);
+  }
+
+  .header-alignment {
+    @include grid-column($columns:12);
+    margin-bottom: rem-calc(20px);
+  }
+
+  .split {
+    @include grid-row();
+    margin-top: rem-calc(30px);
+    margin-bottom: rem-calc(20px);
+
+    @media #{$medium} {
+      margin-top: rem-calc(30px);
+      margin-bottom: rem-calc(100px);
+    }
+  }
+
+  .contact {
+    @include grid-column($columns:12);
+    margin-bottom: rem-calc(30px);
+
+    @media #{$medium} {
+      @include grid-column($columns:6);
+      margin-bottom: 0;
+    }
+
+    input, textarea {
+      -webkit-appearance: none;
+      -webkit-box-shadow: none;
+    }
+
+    textarea {
+      max-width: 100%;
+      min-width: 100%;
+      height: rem-calc(175px);
+    }
+  }
+
+  .donate {
+    @include grid-column($columns:12);
+
+    @media #{$medium} {
+      @include grid-column($columns:6);
+    }
+
+    img {
+      margin-top: rem-calc(21px);
+    }
+
+    .caption {
+      font-size: 0.8rem;
+      margin-top: rem-calc(5px);
+    }
+  }
+}
