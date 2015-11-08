@@ -45,15 +45,22 @@
 
     <%= yield %>
 
-    <div class="footer">
-      This is the Footer!
-      <%= link_to 'Home', '/index.html' %>
-      <%= link_to 'About', '/about.html' %>
-      <%= link_to 'Projects', '/projects.html' %>
-      <%= link_to 'Team', '/team.html' %>
-      <%= link_to 'Connect', '/connect.html' %>
-      <%= link_to 'SEG', '/projects/seg.html' %>
-    </div>
+    <footer class="site-footer">
+      <div class="site-footer__wrapper">
+        <div class="site-footer__social-links">
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Flickr</a></li>
+            <li><a href="#">Vimeo</a></li>
+            <li><a href="#">JoinCUSD.org</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__copyright">
+          <span>&copy;&nbsp;2011&ndash;<%= Time.now.year %> Cornell University Sustainable Design</span>
+        </div>
+      </div>
+    </footer>
     <%= javascript_include_tag  "cusd" %>
   </body>
 </html>
