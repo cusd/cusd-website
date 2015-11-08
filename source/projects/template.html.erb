@@ -1,4 +1,12 @@
 <% content_for(:title, project.name) %>
 
-  <h1><%= project.name %></h1>
-  <h2><%= project.tagline %></h2>
+<div class="photo-strip photo-strip--showcase" style="background-image: url(/images/<%= project.hero_image %>)">
+  <div class="photo-strip__text">
+    <h1><%= project.name %></h1>
+    <h2><%= project.tagline %></h2>
+  </div>
+</div>
+
+<%= project.description %>
+
+<div class="photo-strip " style="background-image: url(/images/<%= project.hero_image %>)"></div>
