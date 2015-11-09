@@ -7,6 +7,51 @@
   </div>
 </div>
 
-<%= project.description %>
+<div class="sidebar-box">
+  <div class="sidebar-box__wrapper">
+
+    <article class="description">
+      <p class="lede">
+        <%= project.lede %>
+      </p> 
+
+      <%= project.description %>
+
+      <div class="gallery">
+        <% project.photos.each do |i| %>
+          <figure>
+            <%= image_tag i.url, alt: i.desc %>
+          </figure>
+        <% end %>
+      </div>
+    </article>
+
+    <aside class="impact">
+      <% if project.impact.key? 'video' %>
+        <!-- <h3><%= project.impact.video.title %></h3> -->
+        <!-- <%= project.impact.video.url %> -->
+      <% end %>
+
+      <% if project.impact.key? 'quote' %>
+        <article class="impact__quote">
+          <blockquote><%= project.impact.quote.text %></blockquote>
+          <span class="impact__quote__attr"><%= project.impact.quote.attribution %></span>
+        </article>
+      <% end %>
+
+      <% if project.impact.key? 'stats' %>
+        <% project.impact.stats.each do |s| %>
+        <article class="impact__stat">
+          <span class="impact__stat__title"><%= s.title %></span>
+          <span class="impact__stat__number"><%= s.number %></span>
+        </article>
+        <% end %>
+      <% end %>
+
+    </aside>
+
+  </div>
+</div>
+
 
 <div class="photo-strip " style="background-image: url(/images/<%= project.hero_image %>)"></div>

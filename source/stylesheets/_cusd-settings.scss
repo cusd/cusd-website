@@ -71,7 +71,7 @@
 // We use this to control whether or not CSS classes come through in the gem files.
 $include-html-classes: false;
 $include-print-styles: false;//true;
-$include-html-global-classes: $include-html-classes;
+$include-html-global-classes: true;//$include-html-classes;
 
 // b. Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -134,6 +134,8 @@ $dark-grey: $dark-gray;
 
 $subtle-shadow: rem-calc(0px 1px 2px 0px) rgba(0,0,0,0.50);
 $subtle-inner-shadow: inset rem-calc(0px 1px 2px 0px) rgba(0,0,0,0.50);
+$subtle-text-shadow: rem-calc(0px 1px 2px) rgba(0,0,0,0.50);
+
 
 // We use these as default colors throughout
 $primary-color: $keppel;
@@ -147,7 +149,7 @@ $secondary-color: $light-gray;
 // $body-bg: $white;
 $body-font-color: $dark-gray;//$jet;
 // $body-font-family: $font-family-sans-serif;
-// $body-font-weight: $font-weight-normal;
+$body-font-weight: $font-weight-light;//$font-weight-normal;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
@@ -268,8 +270,8 @@ $h3-font-size: rem-calc(24);//rem-calc(27);
 
 // We use these to style paragraphs
 $paragraph-font-family: $font-family-sans-serif;//inherit;
-// $paragraph-font-weight: $font-weight-normal;
-// $paragraph-font-size: 1rem;
+$paragraph-font-weight: $font-weight-light;//$font-weight-normal;
+$paragraph-font-size: rem-calc(16);//1rem;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
