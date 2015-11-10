@@ -1,0 +1,43 @@
+.site-footer {
+  background: $light-gray;
+  width:100%;
+  box-shadow: $subtle-inner-shadow;
+
+  &__wrapper {
+    @include grid-row();
+  }
+
+  &__social-links {
+    @include grid-column($columns: 6);
+    padding: rem-calc(48 0 24);
+
+    ul {
+      list-type: none;  
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: rem-calc(12);
+    }
+
+    a {
+      font-size: rem-calc(14);
+      line-height: rem-calc(14);
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &__copyright {
+    @include grid-column($columns: 6);
+    padding: rem-calc(48 0 24);
+    
+    span {
+      float: right;
+      font-size: rem-calc(14);
+      line-height: rem-calc(25);
+      font-weight: $font-weight-light;
+      font-family: $body-font-family;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@mixin sidebar-box($columns, $color: $light-gray, $side: left) {
+  $span-pct: 1 - $columns/$total-columns;
+  $from-color: transparent;
+  $to-color: $color;
+  
+  @if $side == left {
+    $span-pct: 1 - $span-pct;
+    $from-color: $color;
+    $to-color: transparent;
+  }
+
+  background: linear-gradient(to right, 
+      $from-color calc((100% - #{$row-width})/2 + (#{$span-pct} * #{$row-width})), 
+      $to-color calc((100% - #{$row-width})/2 + (#{$span-pct} * #{$row-width}))
+    );
+}
+
+.sidebar-box__wrapper {
+  @include grid-row();
+}

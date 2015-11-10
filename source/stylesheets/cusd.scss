@@ -1,0 +1,15 @@
+@import "cusd-settings";
+@import "foundation/scss/foundation";
+
+@import "components/button";
+@import "components/footer";
+@import "components/header";
+@import "components/photo-strip";
+@import "components/sidebar";
+@import "components/type";
+
+@import "pages/project";
+
+* {
+  box-sizing: border-box;
+}

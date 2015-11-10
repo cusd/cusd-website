@@ -1,0 +1,44 @@
+.projects {
+
+  .sidebar-box {
+    @include sidebar-box($columns: 4, $side: right);
+  }
+
+  .description {
+    @include grid-column($columns: 7);
+    padding: rem-calc(72 0);
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem-calc(48);
+
+    figure {
+      width: percentage(2/7);
+      box-shadow: $subtle-shadow;
+    }
+  }
+
+  .impact {
+    @include grid-column($columns: 3, $offset: 2);
+    padding: rem-calc(72 0);
+
+    &__stat {
+      font-weight: $font-weight-normal;
+
+      &:not(:first-of-type) {
+        margin-top: rem-calc(48);
+      }
+
+      &__title {
+        font-size: rem-calc(24);
+        display: block;
+      }
+
+      &__number {
+        font-size: rem-calc(42);
+      }
+    }
+  }
+}

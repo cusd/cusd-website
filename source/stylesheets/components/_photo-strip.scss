@@ -1,0 +1,21 @@
+.photo-strip {
+  box-shadow: $subtle-inner-shadow;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  padding: rem-calc(72 0);
+  height: rem-calc(200);
+
+  &__text {
+    @include grid-row();
+
+    h1, h2 {
+      color: $white;
+      text-shadow: $subtle-text-shadow;
+    }
+  }
+
+  &--showcase {
+    height: rem-calc(500);
+  }
+}
