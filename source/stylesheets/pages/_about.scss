@@ -1,0 +1,32 @@
+.about {
+
+	.sidebar-box {
+	@include sidebar-box($columns: 4, $side: left);
+}
+
+	.sidebar-label {
+		@include grid-column($columns: 3);
+		padding-top: rem-calc(160);
+	}
+
+	.main {
+		@include grid-column($columns: 6, $offset: 2);
+		padding-top: rem-calc(80);
+	}
+
+	.sidebar-box-white {
+		@include sidebar-box($columns: 4, $color: $white, $side: left);
+		
+	}
+
+	.sidebar-white-label {
+		@include grid-column($columns: 3);
+
+	}
+
+	.box {
+		@include grid-column($columns: 8, $offset: 4);
+		background-color: black;
+	}
+}
+
