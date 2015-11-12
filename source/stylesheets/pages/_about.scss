@@ -1,0 +1,46 @@
+.about {
+
+	.sidebar-box {
+	@include sidebar-box($columns: 4, $side: left);
+}
+
+	.sidebar-label {
+		@include grid-column($columns: 4, $offset: -0.5);
+		padding-top: rem-calc(160);
+	}
+
+	.main {
+		@include grid-column($columns: 6, $offset: 2);
+		padding-top: rem-calc(80);
+	}
+
+	.sidebar-box-white {
+		@include sidebar-box($columns: 4, $color: $white, $side: left);
+		
+	}
+
+	.sidebar-white-label {
+		@include grid-column($columns: 3);
+
+	}
+
+	.value__row {
+		@include grid-row();
+		@include grid-column($columns: 8, $offset: 4);
+		margin: 0;
+	}
+
+	.value__row__color {
+		width: 25%;
+		float: left;
+		background-color: green;
+	}
+
+	.value__row__label {
+		float: left;
+		padding-left: rem-calc(60);
+		
+	}
+
+}
+

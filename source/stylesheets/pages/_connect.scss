@@ -1,0 +1,41 @@
+.connect {
+
+	.sidebar-box {
+		@include sidebar-box($columns: 3, $side: left);
+	}
+
+	.sidebar-label {
+		@include grid-column($columns: 2);
+		padding-top: rem-calc(72-17);
+	}
+
+	.contacts {
+		@include grid-column($columns: 8, $offset: 2);
+		margin: rem-calc(24 0 72);
+	}
+
+	.contact__row {
+		@include grid-row ();
+		margin: 0;
+	}
+
+	.contact {
+		@include grid-column($columns: 6);
+		margin-top: rem-calc(48px);
+	}
+
+	.contact__photo {
+		width: 25%;
+		float: left;
+	}
+
+	.contact__info {
+		float: left;
+		margin-left: rem-calc(12px);
+		&__name {
+		margin: rem-calc(-8 0 0);
+			
+		}
+	}
+
+}

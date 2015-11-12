@@ -1,0 +1,9 @@
+.index {
+    .sidebar-box {
+	background: linear-gradient(to right, $light-gray 50%, $gulf-stream-tint 50%);
+    }
+    .team-text {
+		@include grid-column($columns: 5);
+		padding-top: rem-calc(72-17);
+    }
+}
