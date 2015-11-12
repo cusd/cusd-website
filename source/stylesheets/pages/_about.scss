@@ -14,33 +14,31 @@
 		padding-top: rem-calc(80);
 	}
 
-	.sidebar-box-white {
-		@include sidebar-box($columns: 4, $color: $white, $side: left);
-		
-	}
-
 	.sidebar-white-label {
 		@include grid-column($columns: 3);
 
 	}
 
+	.values {
+		@include grid-column($columns: 8, $offset: 4);
+
+	}
+
 	.value__row {
 		@include grid-row();
-		@include grid-column($columns: 8, $offset: 4);
 		margin: 0;
 	}
 
-	.value__row__color {
-		width: 25%;
-		float: left;
-		background-color: green;
+	.value {
+		@include grid-column($columns: 8);
 	}
 
-	.value__row__label {
+	.value__row__photo {
+		width: 25%;
 		float: left;
-		padding-left: rem-calc(60);
-		
 	}
+
+	
 
 }
 
