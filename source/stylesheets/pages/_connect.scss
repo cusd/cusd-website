@@ -12,28 +12,27 @@
 	.contacts {
 		@include grid-column($columns: 8, $offset: 2);
 		margin: rem-calc(24 0 72);
-	}
-
-	.contact__row {
-		@include grid-row ();
-		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
 	}
 
 	.contact {
-		@include grid-column($columns: 6);
 		margin-top: rem-calc(48px);
-	}
+		width: 50%;
 
-	.contact__photo {
-		width: 25%;
-		float: left;
-	}
+		&__photo {
+			width: 25%;
+			float: left;
+		}
 
-	.contact__info {
-		float: left;
-		margin-left: rem-calc(12px);
-		&__name {
-			margin: rem-calc(-8 0 0);
+		&__info {
+			float: left;
+			margin-left: rem-calc(12px);
+			
+			&__name {
+				margin: rem-calc(-8 0 0);
+			}
 		}
 	}
 
