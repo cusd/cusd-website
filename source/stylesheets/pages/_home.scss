@@ -23,4 +23,17 @@
 		padding-top: rem-calc(72-17);
 		padding-bottom: rem-calc(72-17);
     }
+
+    .page-contents {
+    margin: 0 auto;
+    max-width: 64rem;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: rem-calc(30); 
+    }
+
+    .timeline-label {
+      @include grid-column($columns: 8);
+      margin: rem-calc(72 0);
+    }
 }

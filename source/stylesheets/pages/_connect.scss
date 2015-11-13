@@ -33,9 +33,19 @@
 		float: left;
 		margin-left: rem-calc(12px);
 		&__name {
-		margin: rem-calc(-8 0 0);
-			
+			margin: rem-calc(-8 0 0);
 		}
 	}
 
+	.page-contents {
+		margin: 0 auto;
+		max-width: 64rem;
+		width: 100%;
+		overflow: auto;
+		padding-bottom: rem-calc(30); 
+	} 
+
+	.project-button {
+		max-width: rem-calc(150);
+	}
 }

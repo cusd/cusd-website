@@ -22,7 +22,7 @@
 
   .choose-project {
     @include grid-column($columns: 4, $offset: 2);
-    padding: rem-calc(72 0);
+    padding: rem-calc(72-9 0);
 
     &__stat {
       font-weight: $font-weight-normal;

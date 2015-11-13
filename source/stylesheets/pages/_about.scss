@@ -1,44 +1,54 @@
 .about {
 
-	.sidebar-box {
-	@include sidebar-box($columns: 4, $side: left);
-}
+  .sidebar-box {
+    @include sidebar-box($columns: 4, $side: left);
+  }
 
-	.sidebar-label {
-		@include grid-column($columns: 4, $offset: -0.5);
-		padding-top: rem-calc(160);
-	}
+  .sidebar-label {
+    @include grid-column($columns: 4, $offset: -0.5);
+    padding-top: rem-calc(160);
+  }
 
-	.main {
-		@include grid-column($columns: 6, $offset: 2);
-		padding-top: rem-calc(80);
-	}
+  .main {
+    @include grid-column($columns: 6, $offset: 2);
+    padding-top: rem-calc(80);
+  }
 
-	.sidebar-white-label {
-		@include grid-column($columns: 3);
+  .sidebar-white-label {
+    @include grid-column($columns: 3);
 
-	}
+  }
 
-	.values {
-		@include grid-column($columns: 8, $offset: 4);
+  .values {
+    @include grid-column($columns: 8, $offset: 4);
 
-	}
+  }
 
-	.value__row {
-		@include grid-row();
-		margin: 0;
-	}
+  .value__row {
+    @include grid-row();
+    margin: 0;
+  }
 
-	.value {
-		@include grid-column($columns: 8);
-	}
+  .value {
+    @include grid-column($columns: 6);
+  }
 
-	.value__row__photo {
-		width: 25%;
-		float: left;
-	}
-
-	
+  .value__row__photo {
+    width: 25%;
+    float: left;
+  }
+  .page-contents {
+    margin: 0 auto;
+    max-width: 64rem;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: rem-calc(30); 
+  } 
+  
+  .project-button {
+    max-width: rem-calc(150);
+  }
+  
 
 }
 
