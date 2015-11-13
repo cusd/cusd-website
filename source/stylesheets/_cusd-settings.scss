@@ -92,9 +92,9 @@ $font-family-sans-serif: 'Source Sans Pro', "Helvetica Neue", Helvetica, Roboto,
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-$font-weight-light: 300;
-// $font-weight-normal: normal;
-// $font-weight-bold: bold;
+$font-weight-light: 200;
+$font-weight-normal: 300;//normal;
+$font-weight-bold: 400;//bold;
 
 // $white       : #FFFFFF;
 // $ghost       : #FAFAFA;
@@ -233,12 +233,12 @@ $include-html-type-classes: true;//$include-html-classes;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-// $header-font-weight: $font-weight-normal;
+$header-font-weight: $font-weight-bold;//$font-weight-normal;
 // $header-font-style: normal;
 $header-font-color: $dark-gray;//$jet;
-// $header-line-height: 1.4;
-// $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
+$header-line-height: 1.2;//1.4;
+$header-top-margin: 0;//.2rem;
+$header-bottom-margin: 0;//.5rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
@@ -270,7 +270,7 @@ $h3-font-size: rem-calc(24);//rem-calc(27);
 
 // We use these to style paragraphs
 $paragraph-font-family: $font-family-sans-serif;//inherit;
-$paragraph-font-weight: $font-weight-light;//$font-weight-normal;
+// $paragraph-font-weight: $font-weight-normal;
 $paragraph-font-size: rem-calc(16);//1rem;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);

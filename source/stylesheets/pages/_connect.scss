@@ -31,11 +31,14 @@
 			margin-left: rem-calc(12px);
 			
 			&__name {
-				margin: rem-calc(-8 0 0);
+				margin: rem-calc(-5 0 0);
 			}
 
 			&__title, &__team{
 				display: block;
+				font-size: rem-calc(18);
+				line-height: rem-calc(25);
+				font-weight: $font-weight-light;
 			}
 
 			&__links a {
