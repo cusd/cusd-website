@@ -9,37 +9,16 @@
     padding: rem-calc(72 0);
   }
 
-  .gallery {
-    display: flex;
-    justify-content: space-between;
-    margin-top: rem-calc(48);
-
-    figure {
-      width: percentage(2/7);
-      box-shadow: $subtle-shadow;
-    }
-  }
-
   .choose-project {
     @include grid-column($columns: 4, $offset: 2);
     padding: rem-calc(72-9 0);
 
-    &__stat {
-      font-weight: $font-weight-normal;
-
-      &:not(:first-of-type) {
-        margin-top: rem-calc(48);
-      }
-
-      &__title {
-        font-size: rem-calc(24);
-        display: block;
-      }
-
-      &__number {
-        font-size: rem-calc(42);
-      }
+    .accordion {
+      margin-top: rem-calc(48);
     }
+
+    
+
   }
 
   .past-projects-container {
@@ -82,10 +61,6 @@
     width: 100%;
     overflow: auto;
     padding-bottom: rem-calc(30); 
-  }
-
-  .choose-dropdown{
-    margin: 30px 0;
   }
 
   .project-button {

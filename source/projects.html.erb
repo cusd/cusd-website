@@ -14,108 +14,120 @@ title: Projects
   
   <div class="sidebar-box">
     <div class="sidebar-box__wrapper">
-        <article class="proj-list proj-list-smaller">
-          <h2 class="proj-list proj-list-smaller proj-header">Current Projects</h2>
-            <% data.projects.each do |project| %>
-            <div class="current-project-row">
-              <% link_to "/projects/#{project[0]}" do %>
-              <%= image_tag project[1].logo, class:"project-logo" %>
-              <h3><%= project[1].name %></h3>
-              <% end %>
-              <h5><%= project[1].tagline %></h5>
-            </div>
-            <% end %>
-        </article>
 
-        <aside class="choose-project">
-         <h2>What Makes a Good CUSD Project?</h2>
-         <li class="choose-dropdown"><h3>A Meaningful Student Experience</h3></li>
-         <li class="choose-dropdown"><h3>A Reliable Stakeholder</h3></li>
-         <h6><p>Ideally we look for a stakeholder that has an existing,
-            positive relationship with the community, but has
-            few financial resources to otherwise make the
-            project happen without pro bono services.</p>
+      <div class="proj-list proj-list-smaller">
+        <h2 class="proj-list proj-list-smaller proj-header">Current Projects</h2>
+        <% data.projects.each do |project| %>
+        <div class="current-project-row">
+          <% link_to "/projects/#{project[0]}" do %>
+          <%= image_tag project[1].logo, class:"project-logo" %>
+          <h3><%= project[1].name %></h3>
+          <% end %>
+          <h5><%= project[1].tagline %></h5>
+        </div>
+        <% end %>
+      </div>
 
-            <p>The stakeholder’s mission should be aligned with
-            the tangible aims of CUSD, and they should know
-            exactly what they need from CUSD, but be open to
-            creativity and ambition.</p>
+      <aside class="choose-project">
+        <h2>What Makes a Good CUSD Project?</h2>
 
-            <p>Finally, the ideal stakeholder has proven experience
-            and the means to be successful, plus is willing and
-            able to serve as a mentor throughout the project.</p></h6>  
-         <li class="choose-dropdown"><h3>A Complex Problem</h3></li>
+        <div class="accordion">
+          <h3 class="accordion__header">A Meaningful Student Experience</h3>
+          <div class="accordion__content">
+            <p>[LOREM] Ideally we look for a stakeholder that has an existing, positive relationship with the community, but has few financial resources to otherwise make the project happen without pro bono services.</p>
+            <p>The stakeholder’s mission should be aligned with the tangible aims of CUSD, and they should know exactly what they need from CUSD, but be open to creativity and ambition.</p>
+            <p>Finally, the ideal stakeholder has proven experience and the means to be successful, plus is willing and able to serve as a mentor throughout the project.</p>  
+          </div>
+        </div>
 
-         <h2>Interested in Working With Us?</h2>
-         <h5>We scope new projects year-round and
-            are always looking to get in touch with
-            potential stakeholders.</h5>
+        <div class="accordion">
+          <h3 class="accordion__header">A Reliable Stakeholder</h3>
+          <div class="accordion__content">
+            <p>Ideally we look for a stakeholder that has an existing, positive relationship with the community, but has few financial resources to otherwise make the project happen without pro bono services.</p>
+            <p>The stakeholder’s mission should be aligned with the tangible aims of CUSD, and they should know exactly what they need from CUSD, but be open to creativity and ambition.</p>
+            <p>Finally, the ideal stakeholder has proven experience and the means to be successful, plus is willing and able to serve as a mentor throughout the project.</p>  
+          </div>
+        </div>
+
+        <div class="accordion">
+          <h3 class="accordion__header">A Complex Problem</h3>
+          <div class="accordion__content">
+            <p>[LOREM] Ideally we look for a stakeholder that has an existing, positive relationship with the community, but has few financial resources to otherwise make the project happen without pro bono services.</p>
+            <p>The stakeholder’s mission should be aligned with the tangible aims of CUSD, and they should know exactly what they need from CUSD, but be open to creativity and ambition.</p>
+            <p>Finally, the ideal stakeholder has proven experience and the means to be successful, plus is willing and able to serve as a mentor throughout the project.</p>  
+          </div>
+        </div>
+
+        <h2>Interested in Working With Us?</h2>
+        <h5>We scope new projects year-round and
+          are always looking to get in touch with
+          potential stakeholders.</h5>
           <a href="#" class="button project-button">Suggest a Project</a>
         </aside>
+
+      </div>
     </div>
-  </div>
 
 
-  <div class="photo-strip" style="background-image: url(/images/background.png)">
-  </div>
+    <div class="photo-strip" style="background-image: url(/images/background.png)"></div>
 
-  <div class="page-contents">
-    <div class="past-projects-container">
-      <h2 class="proj-list proj-list-smaller proj-header">Past Projects</h2>
-      
-      <% data.pastprojects.each do |pastproject| %>
+    <div class="page-contents">
+      <div class="past-projects-container">
+        <h2 class="proj-list proj-list-smaller proj-header">Past Projects</h2>
+
+        <% data.pastprojects.each do |pastproject| %>
         <div class="current-project-row past-project">
           <%= image_tag pastproject[1].logo, class:"project-logo" %>
           <h3><%= link_to pastproject[1].name, "/past_projects/#{pastproject[0]}" %></h3>
           <h5><%= pastproject[1].tagline %></h5>
         </div>
-      <% end %>
+        <% end %>
 
-      <h2 class="proj-list proj-list-smaller proj-header">Events and Outreach</h2>
+        <h2 class="proj-list proj-list-smaller proj-header">Events and Outreach</h2>
 
-      <% data.projects.each do |project| %>
+        <% data.projects.each do |project| %>
         <div class="current-project-row past-project">
           <h3><%= project[1].name %></h3>
           <h5><%= project[1].tagline %></h5>
         </div>
-      <% end %>
+        <% end %>
 
+      </div>
     </div>
-  </div>
 
-  <div class="photo-strip" style="background-image: url(/images/background.png)">
-  </div>
-
-  <!-- PARTNER / DONATE / JOIN -->
-  <div class="page-contents">
-    <div class="partner-donate-join-container">
-
-      <div class="partner-donate-join-element">
-        <h2>Partner</h2>
-        <br>
-        <h5>Partner with us to help make a project reality</h5>
-        <br>
-        <a href="#" class="button project-button">Learn More</a>
-      </div>
-
-      <div class="partner-donate-join-element">
-        <h2>Donate</h2>
-        <br>
-        <h5>Support our work and directly enable project impact</h5>
-        <br>
-        <a href="#" class="button project-button">Donate</a>
-      </div>
-
-      <div class="partner-donate-join-element">
-        <h2>Join</h2>
-        <br>
-        <h5>Interested in making an impact?</h5>
-        <br>
-        <a href="#" class="button project-button">Learn More</a>
-      </div>
-
+    <div class="photo-strip" style="background-image: url(/images/background.png)">
     </div>
+
+    <!-- PARTNER / DONATE / JOIN -->
+    <div class="page-contents">
+      <div class="partner-donate-join-container">
+
+        <div class="partner-donate-join-element">
+          <h2>Partner</h2>
+          <br>
+          <h5>Partner with us to help make a project reality</h5>
+          <br>
+          <a href="#" class="button project-button">Learn More</a>
+        </div>
+
+        <div class="partner-donate-join-element">
+          <h2>Donate</h2>
+          <br>
+          <h5>Support our work and directly enable project impact</h5>
+          <br>
+          <a href="#" class="button project-button">Donate</a>
+        </div>
+
+        <div class="partner-donate-join-element">
+          <h2>Join</h2>
+          <br>
+          <h5>Interested in making an impact?</h5>
+          <br>
+          <a href="#" class="button project-button">Learn More</a>
+        </div>
+
+      </div>
+    </div>
+
+
   </div>
-
-
-</div>
