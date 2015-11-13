@@ -14,15 +14,70 @@
     padding-top: rem-calc(80);
   }
 
-  .sidebar-white-label {
-    @include grid-column($columns: 3);
+  .values-section {
+    @include grid-row();
 
+    &__header {
+      @include grid-column($columns: 3);
+    }
+
+    &__values {
+      @include grid-column($columns: 8, $offset: 1);
+    }
+
+    &__value {
+      width: 25%;
+      height: 0;
+      padding-top: 25%;
+      float: left;
+      position: relative;
+      transition: background-color $transition-speed;
+
+      &--icon-impact {
+        background: $mantis-tint image-url('icons/values/impact.svg') center 40% / 45% no-repeat;
+        &:hover { background-color: $mantis; }
+      }
+      &--icon-diversity {
+        background: $ocean-green-tint image-url('icons/values/diversity.svg') center 40% / 60% no-repeat;
+        &:hover { background-color: $ocean-green; }
+      }
+      &--icon-efficiency {
+        background: $gulf-stream-tint image-url('icons/values/efficiency.svg') center 40% / 45% no-repeat;
+        &:hover { background-color: $gulf-stream; }
+      }
+      &--icon-sustainability {
+        background: $mantis-tint image-url('icons/values/sustainability.svg') center 40% / 45% no-repeat;
+        &:hover { background-color: $mantis; }
+      }
+      &--icon-collaboration {
+        background: $ocean-green-tint image-url('icons/values/collaboration.svg') center 40% / 40% no-repeat;
+        &:hover { background-color: $ocean-green; }
+      }
+      &--icon-responsibility {
+        background: $gulf-stream-tint image-url('icons/values/responsibility.svg') center 40% / 45% no-repeat;
+        &:hover { background-color: $gulf-stream; }
+      }
+      &--icon-innovation {
+        background: $mantis-tint image-url('icons/values/innovation.svg') center 35% / 50% no-repeat;
+        &:hover { background-color: $mantis; }
+      }
+      &--icon-engagement {
+        background: $ocean-green-tint image-url('icons/values/engagement.svg') center 40% / 40% no-repeat;
+        &:hover { background-color: $ocean-green; }
+      }
+    }
+    
+    &__label {
+      position: absolute;
+      bottom: rem-calc(16);
+      left: 10%;
+      text-align: center;
+      width: 80%;
+      color: $white;
+      font-weight: $font-weight-bold;
+    }
   }
 
-  .values {
-    @include grid-column($columns: 8, $offset: 4);
-
-  }
 
   .value__row {
     @include grid-row();
