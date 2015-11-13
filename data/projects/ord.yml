@@ -1,12 +1,25 @@
 name: Overlook Ridge Development
-logo: CUSDLogoTypeGray.svg
-tagline: Designing a sustainable future for Cornell in NYC.
+logo: project-logos/ord.svg
+tagline: Net-zero housing for rural New York
+hero_image:
+lede: "Located in Little Falls, New York, the Overlook Ridge Development combines cutting-edge, sustainable living with world-class leadership education."
 description:
-  "<p class=\"lede\">As the only student group working on the tech campus, CUSD has performed comprehensive analyses of wind, solar, hydro, and geothermal energy production for Roosevelt Island and beyond. Using sophisticated models and comprehensive research, CUSD has worked closely with Facilities to pursue a floating solar park, campus wide geothermal installations, and innovative wind power solutions. CUSD has provided strategic, technical research, and rigorous design resources to numerous parts of the Tech Campus.</p>
-  <p>CUSD has been involved with the Cornell Tech Campus since the intial RFP phase in 2012. Students have played a large role in the multi-phase master plan and LEED certification of the entire campus. In producing a mast plan for the next phases of the campus, the team incorporates local and transportation and logistical constraints, while simultaneously embracing community engaged design practices.</p>
-  <p>Currently, CUSD&#8217;s involvement in Cornell Tech is in a scoping phase as we determine the next major initiative to pursue.</p>
-  "
+  "<p>
+  The Overlook Ridge Campus will be home to six newly developed townhomes that feature a variety of innovative green technologies, contributing to the campus’ zero-net energy status. It will be home to individuals looking for a change in the form of an innovative, uplifting and sustainable community.
+   </p>
+  <p>
+  The three aspects of the ORD team are Design, Energy, and Public Relations. The Design team works on creating the outer “shells” of the townhouses in the neighborhood. Their goal is to make the housing units both aesthetically pleasing and environmentally sustainable. Meanwhile, the Energy team focuses on coming up with the most effective and plausible sources of energy. Options include using solar-thermal power and rooftop gardens. Members of the Public Relations team work on engaging the community in the project and keeping potential buyers up to date on the neighborhood.
+  </p>"
+
 photos:
-  - project-photos/tech-1.jpg
-  - project-photos/tech-2.jpg
-  - project-photos/tech-3.jpg
+  - url: project-photos/
+  - url: project-photos/
+  - url: project-photos/
+impact:
+ stats:
+    - title:
+      number: 
+    - title: 
+      number: 
+    - title: 
+      number:
