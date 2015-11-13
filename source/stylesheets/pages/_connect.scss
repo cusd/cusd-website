@@ -33,6 +33,10 @@
 			&__name {
 				margin: rem-calc(-8 0 0);
 			}
+
+			&__title, &__team{
+				display: block;
+			}
 		}
 	}
 
