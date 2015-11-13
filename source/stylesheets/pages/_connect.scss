@@ -12,28 +12,66 @@
 	.contacts {
 		@include grid-column($columns: 8, $offset: 2);
 		margin: rem-calc(24 0 72);
-	}
-
-	.contact__row {
-		@include grid-row ();
-		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
 	}
 
 	.contact {
-		@include grid-column($columns: 6);
 		margin-top: rem-calc(48px);
-	}
+		width: 50%;
 
-	.contact__photo {
-		width: 25%;
-		float: left;
-	}
+		&__photo {
+			width: 25%;
+			float: left;
+		}
 
-	.contact__info {
-		float: left;
-		margin-left: rem-calc(12px);
-		&__name {
-			margin: rem-calc(-8 0 0);
+		&__info {
+			float: left;
+			margin-left: rem-calc(12px);
+			
+			&__name {
+				margin: rem-calc(-8 0 0);
+			}
+
+			&__title, &__team{
+				display: block;
+			}
+
+			&__links a {
+				display: inline-block;
+				position: relative;
+				font-size: rem-calc(14);
+				text-decoration: underline;
+
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					height: rem-calc(21);
+				}
+
+				&.email {
+					margin: rem-calc(0 10 0 2+21+6);
+
+					&:before {
+						left: rem-calc(-21-6);
+						width: rem-calc(21);
+						background: image-url("icons/email.png") center center / rem-calc(21) rem-calc(14) no-repeat;
+					}
+				}
+
+				&.twitter {
+					margin: rem-calc(0 10 0 2+17+4);
+
+					&:before {
+						left: rem-calc(-17-4);
+						width: rem-calc(17);
+						background: image-url("icons/twitter.png") center center / rem-calc(17) rem-calc(14) no-repeat;
+					}
+				}
+			}
 		}
 	}
 
