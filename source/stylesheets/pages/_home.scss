@@ -2,8 +2,25 @@
     .sidebar-box {
 	background: linear-gradient(to right, $light-gray 50%, $gulf-stream-tint 50%);
     }
+
+    .photo-strip__text {
+    	@include grid-column($columns: 12, $float: middle);
+
+	}	
+
+	h1 {
+    	font-size: rem-calc(64);
+   		 }
+
+   	h1 ~ h2 {
+   		font-size: rem-calc(32);
+   		padding-left: 10%;
+   	}
+
+
     .team-text {
 		@include grid-column($columns: 5);
 		padding-top: rem-calc(72-17);
+		padding-bottom: rem-calc(72-17);
     }
 }
