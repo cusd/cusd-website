@@ -9,31 +9,73 @@
 	}	
 
 	h1 {
-    	font-size: rem-calc(64);
-   		 }
+    font-size: rem-calc(64);
+  }
 
-   	h1 ~ h2 {
-   		font-size: rem-calc(32);
-   		padding-left: 10%;
-   	}
+ 	h1 ~ h2 {
+ 		font-size: rem-calc(32);
+ 		padding-left: 10%;
+ 	}
 
 
-    .team-text {
-		@include grid-column($columns: 5);
-		padding-top: rem-calc(72-17);
-		padding-bottom: rem-calc(72-17);
-    }
+  .team-text {
+	@include grid-column($columns: 5);
+	padding-top: rem-calc(72-17);
+	padding-bottom: rem-calc(72-17);
+  }
 
-    .page-contents {
+  .page-contents {
     margin: 0 auto;
     max-width: 64rem;
     width: 100%;
     overflow: auto;
-    padding-bottom: rem-calc(30); 
-    }
+    padding-bottom: rem-calc(400); 
+  }
 
-    .timeline-label {
-      @include grid-column($columns: 8);
-      margin: rem-calc(72 0);
+  .timeline-label {
+    @include grid-column($columns: 8);
+    margin: rem-calc(72 0);
+  }
+
+  .timeline {
+    height: rem-calc(24);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, $white 45%, $mid-gray 45%, $mid-gray 55%, $white 55%);
+
+    &__point {
+      height: rem-calc(24);
+      width: rem-calc(24);
+      background-color: $keppel;
+      position: relative;
+
+      .year {
+        position: absolute;
+        top: rem-calc(-48);
+        left: 50%;
+        transform: translate3d(-50%,0,0);
+        color: $keppel;
+        font-weight: $font-weight-bold;
+      }
+
+      .projects {
+        position: absolute;
+        top: rem-calc(24+48);
+        left: rem-calc(-1);
+        list-style: none;
+        margin: 0;
+
+        li {
+          display: block;
+          margin-bottom: rem-calc(12);
+        }
+
+        .button {
+          margin-left: rem-calc(12);
+          transform: translate3d(-50%,0,0);
+        }
+      }
     }
+  }
 }
