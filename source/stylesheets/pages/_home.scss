@@ -25,11 +25,7 @@
   }
 
   .page-contents {
-    margin: 0 auto;
-    max-width: 64rem;
-    width: 100%;
-    overflow: auto;
-    padding-bottom: rem-calc(400); 
+    @include grid-row()
   }
 
   .timeline-label {
@@ -39,10 +35,13 @@
 
   .timeline {
     height: rem-calc(24);
-    width: 90%;
+    margin: rem-calc(250 0 280);
+    width: calc(100% - 68px);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background: linear-gradient(to bottom, $white 45%, $mid-gray 45%, $mid-gray 55%, $white 55%);
+    box-shadow: inset -2px 0 0 0 $white; // Fix flexbox rendering issue that causes line to extend past last point
 
     &__point {
       height: rem-calc(24);
@@ -68,12 +67,11 @@
 
         li {
           display: block;
-          margin-bottom: rem-calc(12);
+          margin-bottom: rem-calc(24);
         }
 
         .button {
-          margin-left: rem-calc(12);
-          transform: translate3d(-50%,0,0);
+          transform: translate3d(calc(-50% + #{rem-calc(12)}),0,0);
         }
       }
     }
