@@ -8,23 +8,27 @@ title: Projects
     </div>
   </div>
 
-  <div class="page-contents">
+<!--   <div class="page-contents">
   	<h2 class="proj-list">The CUSD Process</h2>
-  </div>
+  </div> -->
   
   <div class="sidebar-box">
     <div class="sidebar-box__wrapper">
 
-      <div class="proj-list proj-list-smaller">
-        <h2 class="proj-list proj-list-smaller proj-header">Current Projects</h2>
+      <div class="projects-list projects-list--current-projects">
+        <h2 class="projects-list__header">Current Projects</h2>
         <% data.projects.each do |project| %>
-        <div class="current-project-row">
-          <% link_to "/projects/#{project[0]}" do %>
-          <%= image_tag project[1].logo, class:"project-logo" %>
-          <h3><%= project[1].name %></h3>
-          <% end %>
-          <h5><%= project[1].tagline %></h5>
-        </div>
+          <article class="projects-list__project">
+            <% link_to "/projects/#{project[0]}" do %>
+              <div class="projects-list__project__logo <%= project[0] %>" style="background-image: url(/images/<%= project[1].logo %>)"></div>
+            <% end %>
+            <div class="projects-list__project__text">
+              <% link_to "/projects/#{project[0]}" do %>
+              <h3 class="projects-list__project__name"><%= project[1].name %></h3>
+              <% end %>
+              <span class="projects-list__project__tagline"><%= project[1].tagline %></span>
+            </div>
+          </article>
         <% end %>
       </div>
 
@@ -57,50 +61,51 @@ title: Projects
             <p>Finally, the ideal stakeholder has proven experience and the means to be successful, plus is willing and able to serve as a mentor throughout the project.</p>  
           </div>
         </div>
-
-        <h2>Interested in Working With Us?</h2>
-        <h5>We scope new projects year-round and
-          are always looking to get in touch with
-          potential stakeholders.</h5>
-          <a href="#" class="button project-button">Suggest a Project</a>
-        </aside>
-
-      </div>
-    </div>
-
-
-    <div class="photo-strip" style="background-image: url(/images/background.png)"></div>
-
-    <div class="page-contents">
-      <div class="past-projects-container">
-        <h2 class="proj-list proj-list-smaller proj-header">Past Projects</h2>
-
-        <% data.pastprojects.each do |pastproject| %>
-        <div class="current-project-row past-project">
-          <%= image_tag pastproject[1].logo, class:"project-logo" %>
-          <h3><%= link_to pastproject[1].name, "/past_projects/#{pastproject[0]}" %></h3>
-          <h5><%= pastproject[1].tagline %></h5>
+        
+        <div class="work-with-us">
+          <h2 class="work-with-us__header">Interested in Working With Us?</h2>
+          <p class="work-with-us__text">We scope new projects year-round and are always looking to get in touch with potential stakeholders.</p>
+          <a href="#" class="work-with-us__button button">Suggest a Project</a>
         </div>
+      </aside>
+
+    </div>
+  </div>
+
+
+  <div class="photo-strip" style="background-image: url(/images/background.png)"></div>
+
+  <div class="projects-secondary">
+    <div class="projects-list">
+      <h2 class="projects-list__header">Past Projects</h2>
+
+      <% data.pastprojects.each do |project| %>
+          <article class="projects-list__project">
+            <% link_to "/projects/#{project[0]}" do %>
+              <div class="projects-list__project__logo <%= project[0] %>" style="background-image: url(/images/<%= project[1].logo %>)"></div>
+            <% end %>
+            <div class="projects-list__project__text">
+              <% link_to "/projects/#{project[0]}" do %>
+              <h3 class="projects-list__project__name"><%= project[1].name %></h3>
+              <% end %>
+              <span class="projects-list__project__tagline"><%= project[1].tagline %></span>
+            </div>
+          </article>
         <% end %>
+      </div>
 
-        <h2 class="proj-list proj-list-smaller proj-header">Events and Outreach</h2>
-
+      <div class="projects-list">
+        <h2 class="projects-list__header">Events and Outreach</h2>
         <% data.projects.each do |project| %>
         <div class="current-project-row past-project">
           <h3><%= project[1].name %></h3>
           <h5><%= project[1].tagline %></h5>
         </div>
         <% end %>
-
       </div>
-    </div>
-
-    <div class="photo-strip" style="background-image: url(/images/background.png)">
-    </div>
-
-
-      </div>
-    </div>
-
 
   </div>
+
+  <div class="photo-strip" style="background-image: url(/images/background.png)"></div>
+</div>
+

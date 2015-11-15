@@ -1,14 +1,11 @@
 name: Windows
-logo: CUSDLogoTypeGray.svg
-tagline:
+logo: project-logos/futures.svg
+tagline: Studying the feasiblity and cost of thermosensitive technologies
 hero_image:
-lede: ""
+lede: "CUSD students were tasked with analyzing the feasibility of installing thermosensitive windows on Olin Hall, one of the main engineering buildings on Cornell University's Ithaca campus."
 description:
-  "<p>
-  	
-   </p>
-  <p>
-  </p>"
+  "<p>Students have focused on collecting data and using all relevant information to develop a comprehensive model of Olin Hall, working specifically with the modeling tool DesignBuilder. Team members have also conducted extensive research on a variety of thermosenstive window technologies to gauge the best available options. Each of these technologies will be input into DesignBuilder to determine their impacts on the building’s energy consumption. After evaluation of all possibilities, students will make a decision on which most effectively reduces energy consumption and, therefore, cuts costs.</p>
+  "
 
 photos:
   - url: project-photos/

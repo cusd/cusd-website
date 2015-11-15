@@ -4,9 +4,51 @@
     @include sidebar-box($columns: 5, $side: right);
   }
 
-  .proj-list {
-    @include grid-column($columns: 6);
-    padding: rem-calc(72 0);
+  .projects-secondary {
+    @include grid-row();
+  }
+
+  .projects-list {
+    @include grid-column($columns: 12);
+    padding: rem-calc(72-9 0);
+    display: flex;
+    flex-wrap: wrap;
+
+    &__project {
+      margin-top: rem-calc(48);
+      width: 50%;
+
+      &__logo {
+        float: left;
+        width: percentage(2/6);
+        padding-top: percentage(2/6);
+        background-color: $light-gray;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 60% 60%;
+
+        &.gbmp { background-color: $gbmp-color }
+        &.ord { background-color: $ord-color }
+        &.seg { background-color: $seg-color }
+        &.tech { background-color: $tech-color }
+        &.upson { background-color: $futures-color }
+        &.windows { background-color: $futures-color }
+      }
+
+      &__text {
+        float: left;
+        width: percentage(4/6);
+        padding-left: rem-calc(16);
+      }
+    }
+
+    &--current-projects {
+      @include grid-column($columns: 6);
+
+      .projects-list__project {
+        width: 100%;
+      }
+    }
   }
 
   .choose-project {
@@ -16,42 +58,5 @@
     .accordion {
       margin-top: rem-calc(48);
     }
-
-    
-
-  }
-
-  .past-projects-container {
-    display: flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-  }
-
-  .project-logo {
-    height:150px;
-  }
-
-  .proj-list-smaller {
-    padding: rem-calc(32 0);
-  }
-
-  .proj-header {
-    width:100%;
-  }
-  
-  .current-project-row {
-    @include grid-row();
-    margin-bottom: rem-calc(48);
-  }
-  
-  .past-project {
-    width:50%;
-    margin:0;
-    margin-bottom: 20px;
-  }
-  
-  .current-project-row img {
-    float:left;
-    margin-right: 15px;
   }
 }

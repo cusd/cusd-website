@@ -9,7 +9,7 @@ photos:
   - url: project-photos/upson-2.jpg
   - url: project-photos/upson-3.jpg
 impact:
- stats:
+  stats:
     - title:
       number: 
     - title: 
