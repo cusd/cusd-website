@@ -1,0 +1,30 @@
+.footer-cta {
+  @include grid-row();
+  display: flex;
+
+  &__cta {
+    @include grid-column($columns: 4);
+    padding: rem-calc(72 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title {
+      margin-bottom: rem-calc(48);
+      text-align: center;
+    }
+
+    &__description {
+      margin: 0 auto rem-calc(32);
+      text-align: center;
+      max-width: 50%;
+
+    }
+
+    &__button {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}

@@ -37,8 +37,9 @@
     }
   }
 
-  .page-contents {
-    @include grid-row()
+  .timeline-row {
+    @include grid-row();
+    overflow: visible;
   }
 
   .timeline-label {
