@@ -22,7 +22,7 @@ var switchRole = function() {
       
   i = i % roles.length;
   animateRoleText(toRole.slice(0,1).toUpperCase() + toRole.slice(1));
-  animateTeamGraphic('#' + fromRole, '#' + toRole, 1500);
+  animateTeamGraphic('#' + fromRole, '#' + toRole, 1000);
 };
 
 $(document).ready(function(){
