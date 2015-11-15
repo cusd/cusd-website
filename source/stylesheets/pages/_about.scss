@@ -4,14 +4,14 @@
     @include sidebar-box($columns: 4, $side: left);
   }
 
-  .sidebar-label {
+  .quote {
     @include grid-column($columns: 4, $offset: -0.5);
     padding-top: rem-calc(160);
   }
 
-  .main {
+  .mission {
     @include grid-column($columns: 6, $offset: 2);
-    padding-top: rem-calc(80);
+    padding: rem-calc(72 0);
   }
 
   .values-section {
@@ -19,6 +19,14 @@
 
     &__header {
       @include grid-column($columns: 3);
+      height: rem-calc(340);
+      position: relative;
+
+      h2 {
+        position: absolute;
+        top: 50%;
+        transform: translate3d(0,-50%,0);
+      }
     }
 
     &__values {
@@ -78,20 +86,6 @@
     }
   }
 
-
-  .value__row {
-    @include grid-row();
-    margin: 0;
-  }
-
-  .value {
-    @include grid-column($columns: 6);
-  }
-
-  .value__row__photo {
-    width: 25%;
-    float: left;
-  }
   .page-contents {
     margin: 0 auto;
     max-width: 64rem;
