@@ -1,11 +1,10 @@
 .index {
-    .sidebar-box {
-	background: linear-gradient(to right, $light-gray 50%, $gulf-stream-tint 50%);
-    }
+  .sidebar-box {
+    background: linear-gradient(to right, $light-gray 50%, $gulf-stream-tint 50%);
+  }
 
-    .photo-strip__text {
-    	@include grid-column($columns: 12, $float: middle);
-
+  .photo-strip__text {
+  	@include grid-column($columns: 12, $float: middle);
 	}	
 
 	h1 {
@@ -19,9 +18,23 @@
 
 
   .team-text {
-	@include grid-column($columns: 5);
-	padding-top: rem-calc(72-17);
-	padding-bottom: rem-calc(72-17);
+  	@include grid-column($columns: 5);
+  	padding: rem-calc(72-17) 0 rem-calc(72);
+
+    h2 {
+      margin-bottom: rem-calc(24);
+    }
+
+  }
+
+  .team-graphic {
+    @include grid-column($columns: 4, $offset: 2);
+    padding: rem-calc(72 0);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .page-contents {
