@@ -26,8 +26,10 @@ var switchRole = function() {
 };
 
 $(document).ready(function(){
-  window.setTimeout(function() {
-    switchRole();
-    window.setInterval(switchRole, 4000);
-  }, 1000);
+  if ($("body.index").length === 1) {
+    window.setTimeout(function() {
+      switchRole();
+      window.setInterval(switchRole, 4000);
+    }, 1000);
+  }
 });
