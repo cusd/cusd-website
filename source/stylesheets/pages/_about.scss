@@ -12,6 +12,14 @@
   .mission {
     @include grid-column($columns: 6, $offset: 2);
     padding: rem-calc(72 0);
+
+    h2 {
+      margin-bottom: rem-calc(16);
+    }
+
+    p:not(:last-child) {
+      margin-bottom: rem-calc(48);
+    }
   }
 
   .values-section {
