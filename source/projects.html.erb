@@ -20,7 +20,7 @@ title: Projects
         <% data.projects.each do |project| %>
           <article class="projects-list__project">
             <% link_to "/projects/#{project[0].split('-')[1]}" do %>
-              <div class="projects-list__project__logo <%= project[0].split('-')[1] %>" style="background-image: url(/images/<%= project[1].logo %>)"></div>
+              <div class="projects-list__project__logo <%= project[0].split('-')[1] %>" style="background-image: url(/images/<%= project[1].logo %>); background-color: <%= project[1].color %>"></div>
             <% end %>
             <div class="projects-list__project__text">
               <% link_to "/projects/#{project[0].split('-')[1]}" do %>
@@ -81,7 +81,7 @@ title: Projects
 
       <% data.pastprojects.each do |project| %>
           <article class="projects-list__project">
-            <div class="projects-list__project__logo <%= project[0].split('-')[1] %>" style="background-image: url(/images/<%= project[1].logo %>)"></div>
+            <div class="projects-list__project__logo <%= project[0].split('-')[1] %>" style="background-image: url(/images/<%= project[1].logo %>); background-color: <%= project[1].color %>"></div>
             <div class="projects-list__project__text">
               <h3 class="projects-list__project__name"><%= project[1].name %></h3>
               <span class="projects-list__project__tagline"><%= project[1].tagline %></span>
