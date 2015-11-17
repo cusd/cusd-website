@@ -9,7 +9,7 @@
 
   &__social-links {
     @include grid-column($columns: 6);
-    padding: rem-calc(48 0 24);
+    padding: rem-calc(48 0 12);
 
     ul {
       list-type: none;  
@@ -30,7 +30,7 @@
 
   &__copyright {
     @include grid-column($columns: 6);
-    padding: rem-calc(48 0 24);
+    padding: rem-calc(48 0 12);
     
     span {
       float: right;
