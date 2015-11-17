@@ -1,0 +1,22 @@
+name: Climate Action Plan
+logo: project-logos/cap.svg
+tagline: "[LOREM] CUSD x Voices of African Mothers"
+hero_image: ""
+lede: ""
+description:
+  ""
+photos:
+  - url: 
+    des: 
+  - url: 
+    des:
+  - url: 
+    des:
+impact:
+  stats:
+    - title: Happy Residents
+      number: "20,000"
+    - title: Money Saved
+      number: $200 MM
+    - title: Energy Generated
+      number: 74 GW/hr
