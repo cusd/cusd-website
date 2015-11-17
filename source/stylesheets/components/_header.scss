@@ -56,12 +56,12 @@
 
       > li { 
         float: right;
-        margin: rem-calc(0 6);
+        // margin: rem-calc(0 6);
 
         &:first-child {
           width: rem-calc(152);
           margin-right: 0;
-          margin-left: rem-calc(35);
+          margin-left: rem-calc(24);
         }
 
         > a:not(.button) {
@@ -69,16 +69,17 @@
           height: 100%;
           width: 100%;
           line-height: rem-calc(25);
-          padding: rem-calc(34 10);
+          padding: rem-calc(34 24);
           font-family: $font-family-sans-serif;
           font-weight: $font-weight-normal;
           font-size: rem-calc(18);
           text-align: center;
           color: $mid-gray;
-          transition: background 300ms;
+          transition: all 300ms;
 
           &:hover {
             background: $keppel-tint;
+            color: $dark-gray;
           }
         }
 
