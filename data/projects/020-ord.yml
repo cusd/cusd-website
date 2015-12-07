@@ -12,9 +12,12 @@ description:
   The three aspects of the ORD team are Design, Energy, and Public Relations. The Design team works on creating the outer “shells” of the townhouses in the neighborhood. Their goal is to make the housing units both aesthetically pleasing and environmentally sustainable. Meanwhile, the Energy team focuses on coming up with the most effective and plausible sources of energy. Options include using solar-thermal power and rooftop gardens. Members of the Public Relations team work on engaging the community in the project and keeping potential buyers up to date on the neighborhood.
   </p>"
 photos:
-  - url: project-photos/
-  - url: project-photos/
-  - url: project-photos/
+  - url: project-photos/ord-1.jpg
+    des:
+  - url: project-photos/ord-2.jpg
+    des:
+  - url: project-photos/ord-3.jpg
+    des:
 impact:
   stats:
     - title:
