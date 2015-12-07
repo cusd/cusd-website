@@ -19,13 +19,13 @@ description:
   </p>"
 photos:
   - url: project-photos/gbmp-1.jpg
+    des:
   - url: project-photos/gbmp-2.jpg
+    des:
   - url: project-photos/gbmp-3.jpg
+    des:
 impact:
- stats:
-    - title:
-      number: 
-    - title: 
-      number: 
-    - title: 
-      number:
+  quote:
+    text: "By focusing on making everyday purchases more sustainable, the GBMP team can have an impact far beyond simply creating a single sustainable project."
+    author: Alex Parkurst
+    relation: Former Team Lead

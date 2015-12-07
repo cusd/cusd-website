@@ -28,14 +28,19 @@
 
     <aside class="impact">
       <% if project.impact.key? 'video' %>
-        <!-- <h3><%= project.impact.video.title %></h3> -->
-        <!-- <%= project.impact.video.url %> -->
+        <article class="impact__video">
+          <h3 class="impact__video__title"><%= project.impact.video.title %></h3>
+          <div class="impact__video__container">
+            <iframe width="560" height="315" src="<%= project.impact.video.url %>" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </article>
       <% end %>
 
       <% if project.impact.key? 'quote' %>
         <article class="impact__quote">
-          <blockquote><%= project.impact.quote.text %></blockquote>
-          <span class="impact__quote__attr"><%= project.impact.quote.attribution %></span>
+          <blockquote class="impact__quote__text"><%= project.impact.quote.text %></blockquote>
+          <span class="impact__quote__attr"><%= project.impact.quote.author %></span>
+          <span class="impact__quote__relation"><%= project.impact.quote.relation %></span>
         </article>
       <% end %>
 

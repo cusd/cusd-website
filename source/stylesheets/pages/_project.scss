@@ -23,9 +23,21 @@
   .impact {
     @include grid-column($columns: 3, $offset: 2);
     padding: rem-calc(72 0);
+    font-weight: $font-weight-normal;
+
+    &__video {
+
+      &__title {
+        font-size: rem-calc(24);
+        display: block;
+      }
+
+      &__container {
+        @include flex-video-container();
+      }
+    }
 
     &__stat {
-      font-weight: $font-weight-normal;
 
       &:not(:first-of-type) {
         margin-top: rem-calc(48);

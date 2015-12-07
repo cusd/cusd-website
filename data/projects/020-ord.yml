@@ -2,7 +2,7 @@ name: Overlook Ridge Development
 logo: project-logos/ord.svg
 color: "#8590B7"
 tagline: Net-zero housing for rural New York
-hero_image:
+hero_image: project-photos/ord-hero.jpg
 lede: "Located in Little Falls, New York, the Overlook Ridge Development combines cutting-edge, sustainable living with world-class leadership education."
 description:
   "<p>
@@ -11,7 +11,6 @@ description:
   <p>
   The three aspects of the ORD team are Design, Energy, and Public Relations. The Design team works on creating the outer “shells” of the townhouses in the neighborhood. Their goal is to make the housing units both aesthetically pleasing and environmentally sustainable. Meanwhile, the Energy team focuses on coming up with the most effective and plausible sources of energy. Options include using solar-thermal power and rooftop gardens. Members of the Public Relations team work on engaging the community in the project and keeping potential buyers up to date on the neighborhood.
   </p>"
-
 photos:
   - url: project-photos/
   - url: project-photos/

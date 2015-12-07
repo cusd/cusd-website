@@ -4,9 +4,7 @@ color: "#FCD83F"
 tagline: Defining the next generation of sustainable design
 hero_image: "project-photos/upson-hero.jpg"
 lede: "The Upson Hall team is working on high-efficiency HVAC (heating, ventilation, and air conditioning) sensors using various tracking technologies and machine learning that will be implemented during the upcoming Upson Hall renovation."
-description: "
-<p>The Upson project uses intelligent occupancy sensing to control the heating system for academic (single professor) offices. Air conditioning and ventilation make up 53% of energy use in commercial buildings. Using cutting edge technologies including machine learning, smartphone applications, sensors, and wearables we are designing a system that will accurately predict whether a professor is in their office and turn their heating on/off based on this data. Upson applies computer science and electrical engineering skills to develop a system that offers substantial energy savings.</p>
-"
+description: "<p>The Upson project uses intelligent occupancy sensing to control the heating system for academic (single professor) offices. Air conditioning and ventilation make up 53% of energy use in commercial buildings. Using cutting edge technologies including machine learning, smartphone applications, sensors, and wearables we are designing a system that will accurately predict whether a professor is in their office and turn their heating on/off based on this data. Upson applies computer science and electrical engineering skills to develop a system that offers substantial energy savings.</p>"
 photos:
   - url: project-photos/upson-1.jpg
     des:
@@ -15,10 +13,13 @@ photos:
   - url: project-photos/upson-3.jpg
     des:
 impact:
+  # video:
+  #   url: https://www.youtube.com/embed/xTWT3oMcpOw
+  #   title: Title of the Video
   stats:
-    - title:
-      number: 
-    - title: 
-      number: 
-    - title: 
-      number:
+    - title: Enery Savings
+      number: "52,261 kWh/yr"
+    - title: End Users
+      number: 100 +
+    - title: Error Rate
+      number: "0.2 %"
