@@ -9,13 +9,18 @@
 
 	h1 {
     font-size: rem-calc(64);
+    @media #{$small-only} {font-size: rem-calc(38);
+      padding-left: 2%;
+      }
   }
 
  	h1 ~ h2 {
  		font-size: rem-calc(32);
  		padding-left: 10%;
+     @media #{$small-only} {font-size: rem-calc(24);
+      padding-left: 2%;
+     }
  	}
-
 
   .team-text {
   	@include grid-column($columns: 5);
@@ -25,6 +30,9 @@
       margin-bottom: rem-calc(24);
     }
 
+    @media #{$small-only} {
+    padding-left: 2%;
+    }
   }
 
   .team-graphic {
