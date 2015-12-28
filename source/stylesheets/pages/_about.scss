@@ -34,6 +34,10 @@
         position: absolute;
         top: 50%;
         transform: translate3d(0,-50%,0);
+
+        @media #{$small-only} {
+          padding-left: 22%;
+        }
       }
     }
 
@@ -48,6 +52,11 @@
       float: left;
       position: relative;
       transition: background-color $transition-speed;
+
+      @media #{$small-only} {
+        width: 50%;
+        padding-top: 50%;
+      }
 
       &--icon-impact {
         background: $mantis-tint image-url('icons/values/impact.svg') center 40% / 45% no-repeat;
