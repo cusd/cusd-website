@@ -2,16 +2,31 @@
 
   .sidebar-box {
     @include sidebar-box($columns: 4, $side: left);
+
+    @media screen and (max-width: $medium-breakpoint){
+      background: none;
+    }
   }
 
   .quote {
     @include grid-column($columns: 4, $offset: -0.5);
     padding-top: rem-calc(160);
+
+    @media screen and (max-width: $medium-breakpoint){
+      display: none;
+      width: 0%;
+    }
   }
 
   .mission {
     @include grid-column($columns: 6, $offset: 2);
     padding: rem-calc(72 0);
+
+    @media screen and (max-width: $medium-breakpoint){
+      width: 100%;
+      margin: 0 !important;
+      padding: rem-calc(20 20);
+    }
 
     h2 {
       margin-bottom: rem-calc(16);

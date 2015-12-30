@@ -2,11 +2,20 @@
 
   .sidebar-box {
     @include sidebar-box($columns: 4, $side: right);
+
+    @media screen and (max-width: $medium-breakpoint){
+      background: none;
+    }
   }
 
   .description {
     @include grid-column($columns: 7);
     padding: rem-calc(72 0);
+
+    @media screen and (max-width: $medium-breakpoint){
+      width: 100%;
+      padding: rem-calc(20 20);
+    }
   }
 
   .gallery {
@@ -24,6 +33,11 @@
     @include grid-column($columns: 3, $offset: 2);
     padding: rem-calc(72 0);
     font-weight: $font-weight-normal;
+
+    @media screen and (max-width: $medium-breakpoint){
+      width: 0%;
+      display: none;
+    }
 
     &__video {
 

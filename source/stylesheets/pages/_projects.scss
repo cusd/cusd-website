@@ -2,10 +2,22 @@
 
   .sidebar-box {
     @include sidebar-box($columns: 5, $side: right);
+
+    @media screen and (max-width: $medium-breakpoint){
+      padding: rem-calc(0 20);
+    }
+
+    @media screen and (max-width: $small-breakpoint){
+      background: none;
+    }
   }
 
   .projects-secondary {
     @include grid-row();
+
+    @media screen and (max-width: $medium-breakpoint){
+      padding: rem-calc(0 20);
+    }
   }
 
   .projects-list {
@@ -51,6 +63,11 @@
     &--current-projects {
       @include grid-column($columns: 6);
 
+      @media screen and (max-width: $small-breakpoint){
+        width: 100%;
+        padding: rem-calc(20 10);
+      }
+
       .projects-list__project {
         width: 100%;
       }
@@ -60,6 +77,11 @@
   .choose-project {
     @include grid-column($columns: 4, $offset: 2);
     padding: rem-calc(72-9 0);
+
+    @media screen and (max-width: $small-breakpoint){
+      display: none;
+      width: 0%;
+    }
 
     .accordion {
       margin-top: rem-calc(48);

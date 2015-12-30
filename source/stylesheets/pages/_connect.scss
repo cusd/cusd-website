@@ -2,11 +2,20 @@
 
 	.sidebar-box {
 		@include sidebar-box($columns: 3, $side: left);
+
+		@media screen and (max-width: $medium-breakpoint){
+      		background: none;
+    	}
 	}
 
 	.sidebar-label {
 		@include grid-column($columns: 2);
 		padding-top: rem-calc(72-17);
+
+		@media screen and (max-width: $medium-breakpoint){
+      		width: 0%;
+      		display: none;
+    	}
 	}
 
 	.contacts {
@@ -15,6 +24,12 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
+
+		@media screen and (max-width: $medium-breakpoint){
+      		width: 100%;
+      		padding: rem-calc(20 20);
+      		margin: 0 !important;
+    	}
 	}
 
 	.contact {
@@ -24,6 +39,11 @@
 		&__photo {
 			width: 25%;
 			float: left;
+
+			@media screen and (max-width: $small-breakpoint){
+      			margin-bottom: rem-calc(10);
+      			width: 50%;
+    		}
 		}
 
 		&__info {

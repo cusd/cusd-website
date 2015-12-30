@@ -9,17 +9,19 @@
 
 	h1 {
     font-size: rem-calc(64);
+    text-align: center;
     @media #{$small-only} {font-size: rem-calc(38);
       padding-left: 2%;
-      }
+    }
   }
 
  	h1 ~ h2 {
  		font-size: rem-calc(32);
  		padding-left: 10%;
-     @media #{$small-only} {font-size: rem-calc(24);
+    text-align: center;
+    @media #{$small-only} {font-size: rem-calc(24);
       padding-left: 2%;
-     }
+    }
  	}
 
   .team-text {
@@ -48,11 +50,18 @@
   .timeline-row {
     @include grid-row();
     overflow: visible;
+    padding: rem-calc(0 15)
   }
 
   .timeline-label {
     @include grid-column($columns: 8);
     margin: rem-calc(72 0);
+
+    @media screen and (max-width: $small-breakpoint){
+      width: 100%;
+      text-align: center;
+      margin: rem-calc(30 0);
+    }
   }
 
   .timeline {
@@ -64,6 +73,10 @@
     align-items: center;
     background: linear-gradient(to bottom, $white 45%, $mid-gray 45%, $mid-gray 55%, $white 55%);
     box-shadow: inset -2px 0 0 0 $white; // Fix flexbox rendering issue that causes line to extend past last point
+
+    @media screen and (max-width: $small-breakpoint){
+      display:none;
+    }
 
     &__point {
       height: rem-calc(24);
@@ -97,5 +110,23 @@
         }
       }
     }
+  }
+}
+
+#responsive-link {
+  display: none;
+
+  @media screen and (max-width: $small-breakpoint){
+    display: inline;
+    float: right;
+  }
+}
+
+#responsive-image {
+  display: none;
+
+  @media screen and (max-width: $small-breakpoint){
+    display: inline;
+    margin-bottom: rem-calc(20);
   }
 }
