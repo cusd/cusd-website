@@ -29,10 +29,10 @@ photos:
     des:
 impact:
   stats:
-     - title: "Four Focuses:"
-       number: "Environment, Education, Healthcare, and Economy"
      - title: 2nd Semester of Project (Design Phase)
+       number:
+     - title: "Four Focuses: Environment, Education, Healthcare, and Economy"
        number: 
-     - title: "200 Acre Plot reaching 700 students"
+     - title: "200 Acre plot reaching 700 students"
        number: 
      - title: "Sustainable design structures: Rainwater capture, parabolic solar panels with thermal mass storage, biodigestor, Porous Pavement, Riparian Buffering"

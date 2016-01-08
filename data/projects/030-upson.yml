@@ -17,9 +17,9 @@ impact:
   #   url: https://www.youtube.com/embed/xTWT3oMcpOw
   #   title: Title of the Video
   stats:
-    - title: Enery Savings
+    - title: Enery savings
       number: "52,261 kWh/yr"
-    - title: End Users
+    - title: End users
       number: 100 +
-    - title: Error Rate
+    - title: Error rate
       number: "0.2 %"

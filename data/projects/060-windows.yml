@@ -3,8 +3,9 @@ logo: project-logos/futures.svg
 color: "#FCD83F"
 tagline: Studying the feasiblity and cost of thermosensitive technologies
 hero_image: "project-photos/windows-hero.jpg"
-lede: "CUSD students were tasked with analyzing the feasibility of installing thermosensitive windows on Olin Hall, one of the main engineering buildings on Cornell University's Ithaca campus."
-description: "<p>Students have focused on collecting data and using all relevant information to develop a comprehensive model of Olin Hall, working specifically with the modeling tool DesignBuilder. Team members have also conducted extensive research on a variety of thermosenstive window technologies to gauge the best available options. Each of these technologies will be input into DesignBuilder to determine their impacts on the building’s energy consumption. After evaluation of all possibilities, students will make a decision on which most effectively reduces energy consumption and, therefore, cuts costs.</p>"
+lede: "Project Olin aims to assess the feasibility of implementing energy-saving window technologies in Olin Hall, the home of the Chemical Engineering department on Cornell’s campus."
+description: "<p> We are working to accomplish this by creating an energy model of Olin Hall on DesignBuilder, an energy-modeling software. We will then manipulate the model to see how different technologies or modifications, such as window treatments, affect the building’s energy consumption.</p> <p>Started in Fall 2015, the project involves several key stages. The first of these is gathering measurements and HVAC (heating, ventilation, and cooling) information for Olin Hall to use in creating the model. Next, we will create the model using this information. We will then move on to our third stage: manipulating the model to determine how changes in window technology will affect energy use. Finally, based on these findings, we will make a recommendation for Olin’s windows, based on energy savings, cost, and other important factors.</p> <p>Currently, we are in the second stage of this process: creating the model. We plan to complete the fourth stage by April 2015.</p>"
+
 photos:
   - url: project-photos/windows-1.jpg
     des:
@@ -14,9 +15,9 @@ photos:
     des:
 impact:
  stats:
-    - title:
-      number: 
-    - title: 
-      number: 
-    - title: 
-      number:
+    - title: Number of windows on Olin Hall
+      number: 200
+    - title: Years involved
+      number: 5
+    - title: Net area of building
+      number: 108,452 sq ft

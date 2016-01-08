@@ -20,9 +20,9 @@ photos:
     des:
 impact:
   stats:
-    - title:
-      number: 
-    - title: 
-      number: 
-    - title: 
-      number:
+    - title: Number of housing units
+      number: 6
+    - title: Reduction in heating and cooling energy demand
+      number: 50%
+    - title: Hot water provided by in-home solar water heaters
+      number: 90%
