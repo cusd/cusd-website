@@ -118,7 +118,9 @@
 
   @media screen and (max-width: $small-breakpoint){
     display: inline;
-    float: right;
+    display: block;
+    width: rem-calc(250);
+    margin: 0 auto rem-calc(20) auto;
   }
 }
 
